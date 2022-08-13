@@ -12,7 +12,8 @@ const popupButtonResetCloseArray = document.querySelectorAll(".popup__button-res
 // open radio form
 const popupOpenRadioMesuare = document.querySelector("#popup-glucose-measure-type");
 const popupOpenRadioInsuline = document.querySelector("#popup-insuline-type-button");
-const popupRadioButtonClose = document.querySelector(".popup__radio-button");
+const popupRadioButtonCloseMeasure = document.querySelector(".popup__radio-button--measure");
+const popupRadioButtonCloseInsuline = document.querySelector(".popup__radio-button--insuline");
 const popupRadioLabelArray = document.querySelectorAll(".popup__radio-label");
 //remove all curent section kickstart
 removeCurrentSection();
@@ -58,7 +59,7 @@ popupOpenRadioMesuare.addEventListener("click", function(evt){
     document.querySelector(".popup__radio-input-wrapper--measure-type").classList.add("popup__radio-input-wrapper--current");   
 });
 //close radio when u press on cross button
-popupRadioButtonClose.addEventListener("click", function(evt){
+popupRadioButtonCloseMeasure.addEventListener("click", function(evt){    
     closeRadio();
 });
 //close radio when u press on radio input
@@ -73,9 +74,27 @@ popupOpenRadioInsuline.addEventListener("click", function(evt){
     console.log("open radio");
 });
 
+//close insuline radio when u press on cross button
+popupRadioButtonCloseInsuline.addEventListener("click", function(evt){
+    console.log("CLIIICK");
+    closeRadioInsuline();
+});
+//close radio when u press on radio input
+for(let i = 0; i < popupRadioLabelArray.length; i++){
+    popupRadioLabelArray[i].addEventListener("click", function(ent){ 
+        console.log("CLIIICK");
+        closeRadioInsuline();
+    })
+};
+
 function closeRadio(){
     document.querySelector(".popup__radio-input-wrapper--measure-type").classList.remove("popup__radio-input-wrapper--current");
+};
+
+function closeRadioInsuline(){
+    document.querySelector(".popup__radio-input-wrapper--insuline-type").classList.remove("popup__radio-input-wrapper--current");
 }
+
 
 
 //remove all curent section
