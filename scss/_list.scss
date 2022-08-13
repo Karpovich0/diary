@@ -3,6 +3,7 @@
         padding: 12px 0;
         display: flex;
         justify-content: space-between;
+        column-gap: 15px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     }
     &__name {
@@ -12,6 +13,7 @@
         color: rgb(17, 17, 17);
     }
     &__content{
+        text-align: right;
         font-weight: 400;
         font-size: 16px;
         line-height: 17px;

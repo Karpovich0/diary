@@ -1,11 +1,45 @@
 .details {
     display: none;
-    &--glucose{
-    display: none;
-    background-color: #f6f6f6;    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    background-color: #f6f6f6;
+    transform: translateX(100vw); 
+    transition: transform 0.3s ease; 
+    &--glucose{   
+        
     }
+    &--current{
+        display: block;
+        transform: translateX(0);  
+    }
+    &__header {
+        padding: 16px;
+        width: 100%;
+        height: 56px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    &__back-button {
+        margin-right: 15px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+
+    &__header-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;        
+        color: $green;
+    }    
     &__content {
         padding: 8px 0;
+        margin-bottom: 17px;
         background-color: #fff;
     }
     &__list{
@@ -20,15 +54,13 @@
         line-height: 19px;       
     }
     &__text{
-        --fg: rgb(0,75,75);
-        --bg: rgba(0,126,126,0.1);
-        --border-color: rgba(0,75,75,0.1);
         padding: 12px;
         border-radius: 6px;
-        border: 1px solid var(--border-color);
-        margin: 8px 0;
-        color: var(--fg);
-        background-color: var(--bg);
+        margin-top: 15px;
+        margin-bottom: 8px;
+        border: 1px solid rgba($dark-green, 0.1);        
+        color: $dark-green;
+        background-color: rgba($green, 0.1);
     }
     &__img-wrapper{
         width: 100%;
@@ -51,3 +83,4 @@
         background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     }
 }
+

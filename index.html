@@ -28,13 +28,13 @@
           <section class="data">            
             <div class="data__buttons-wrapper">
                 <ul class="data__button-list">
-                    <li class="data__button-item"><button type="button" class="data__button data__button--active">Глюкоза</button></li>
-                    <li class="data__button-item"><button type="button" class="data__button">Вес</button></li>
-                    <li class="data__button-item"><button type="button" class="data__button">Питание</button></li>
+                    <li class="data__button-item"><button type="button" class="data__button data__button--glucose">Глюкоза</button></li>
+                    <li class="data__button-item"><button type="button" class="data__button data__button--weight">Вес</button></li>
+                    <li class="data__button-item"><button type="button" class="data__button data__button--dish">Питание</button></li>
                 </ul>                
             </div>
             <div class="data__sections-wrapper">
-                <section class="content-section content-section--active">
+                <section class="content-section">
                     <ul class="content-section__list list">
                         <li class="content-section__item list__item">
                             <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
@@ -63,12 +63,21 @@
           </section>
         </div>
 
-        <section class="details details--glucose">    
+        <section class="details details--glucose">
+            <div class="details__header">
+                <button type="button" class="details__back-button">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 7H3.8L9.4 1.4L8 0L0 8L8 16L9.4 14.6L3.8 9H16V7Z" fill="#007E7E"></path></svg>
+                    <span class="visually-hidden">Назад</span>
+                </button>
+                <p class="details__header-title">
+                    8/9/2022, 9:38 PM
+                </p>
+            </div>    
             <div class="container">       
             <div class="details__content">
-                <h2 class="details__title">
+                <h3 class="details__title">
                     Ваши данные
-                </h2>
+                </h3>
                 <ul class="details__list list">
                     <li class="list__item">
                         <div class="list__name">Дата и время</div>
@@ -93,9 +102,9 @@
                 </ul>                
             </div>
             <div class="details__commentary">
-                <h2 class="details__title">
+                <h3 class="details__title">
                     Комментарий
-                </h2>
+                </h3>
                 <p class="details__text">
                     Тестовый комментарий
                 </p>
@@ -103,12 +112,21 @@
             </div>
         </section>
 
-        <section class="details details--weight">    
+        <section class="details details--weight">
+            <div class="details__header">
+                <button type="button" class="details__back-button">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 7H3.8L9.4 1.4L8 0L0 8L8 16L9.4 14.6L3.8 9H16V7Z" fill="#007E7E"></path></svg>
+                    <span class="visually-hidden">Назад</span>
+                </button>
+                <p class="details__header-title">
+                    8/9/2022, 9:38 PM
+                </p>
+            </div>     
             <div class="container">       
             <div class="details__content">
-                <h2 class="details__title">
+                <h3 class="details__title">
                     Ваши данные
-                </h2>
+                </h3>
                 <ul class="details__list list">
                     <li class="list__item">
                         <div class="list__name">Дата и время</div>
@@ -121,16 +139,25 @@
                 </ul>                
             </div>
             <div class="details__commentary">
-                <h2 class="details__title">
+                <h3 class="details__title">
                     Комментарий
-                </h2>
+                </h3>
                 <p class="details__text">
                     Тестовый комментарий
                 </p>
             </div>
             </div>
         </section>
-        <section class="details details--dish">  
+        <section class="details details--dish"> 
+            <div class="details__header">
+                <button type="button" class="details__back-button">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 7H3.8L9.4 1.4L8 0L0 8L8 16L9.4 14.6L3.8 9H16V7Z" fill="#007E7E"></path></svg>
+                    <span class="visually-hidden">Назад</span>
+                </button>
+                <p class="details__header-title">
+                    8/9/2022, 9:38 PM
+                </p>
+            </div>   
                 <div class="details__img-wrapper">
                     <img src="https://images.unsplash.com/photo-1582169505937-b9992bd01ed9?ixid=MnwxMDEzNjV8MHwxfHNlYXJjaHw2fHxlZ2dzfGVufDB8fHx8MTY1NDg1OTc1NQ&ixlib=rb-1.2.1&utm_source=Glide&utm_medium=referral&w=700&h=231&dpr=1&fit=crop&auto=format" alt="" class="details__img">
                     <h2 class="details__title-for-dish">Овощная запеканка</h2>
@@ -160,10 +187,14 @@
         </section>
     </main>
     <div class="popup-wrapper">
-        <section class="popup">        
-            <div class="popup__header"></div>
+        <section class="popup">  
             <div class="popup__body">
-                <form action="" class="popup__form">
+                <form action="" class="popup__form">      
+                    <div class="popup__header">
+                        <button type="reset" class="popup__button-reset-close"></button>
+                        <h2 class="popup__title">Добавить запись (глюкоза)</h2>
+                        <button type="submit" class="popup__button-submit-open"></button>
+                    </div>            
                     <ul class="popup__list">
                         <li class="popup__item">
                             <label for="popup-datetime" class="popup__label">Дата</label>
@@ -173,37 +204,39 @@
                         <li class="popup__item">
                             <label for="popup-glucose-measure-type" class="popup__label">Тип измерения</label>
                                 <span class="popup__required">Required</span>
-                                <button type="button" id="popup-glucose-measure-type" class="popup__input" type="number" required>
+                                <button type="button" id="popup-glucose-measure-type" class="popup__input" required>
                                     <span class="popup__radio-button-label"></span>
                                 </button>
-                            <div class="popup__radio-input-wrapper">
-                                <div class="popup__radio-header">
-                                    <h3 class="popup__radio-title">Тип измерения</h3>
-                                    <button class="popup__radio-button"></button>
+                                <div class="popup__radio-input-wrapper popup__radio-input-wrapper--measure-type">
+                                    <div class="popup__radio-header">
+                                        <h3 class="popup__radio-title">Тип измерения</h3>
+                                        <button type="button" class="popup__radio-button">
+                                            <span class="visually-hidden">Закрыть</span>
+                                        </button>
+                                    </div>
+                                    <ul class="popup__checkbox-list list">
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-before-dish" type="radio" required checked class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <label for="popup-radio-before-dish" class="popup__radio-label">Натощак перед приемом пищи</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-two-hours-after-breakfast" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label">Через 2 часа после завтрака</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-two-hours-after-lunch" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label">Через 2 часа после обеда</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-two-hours-after-dinner" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label">Через 2 часа после ужина</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-before-sleep" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <label for="popup-radio-before-sleep" class="popup__radio-label">Натощак перед сном</label>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="popup__checkbox-list list">
-                                    <li class="popup__checkbox-item list__item">
-                                        <input id="popup-radio-before-dish" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                        <label for="popup-radio-before-dish" class="popup__radio-label">Натощак перед приемом пищи</label>
-                                    </li>
-                                    <li class="popup__checkbox-item list__item">
-                                        <input id="popup-radio-two-hours-after-breakfast" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                        <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label">Через 2 часа после завтрака</label>
-                                    </li>
-                                    <li class="popup__checkbox-item list__item">
-                                        <input id="popup-radio-two-hours-after-lunch" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                        <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label">Через 2 часа после обеда</label>
-                                    </li>
-                                    <li class="popup__checkbox-item list__item">
-                                        <input id="popup-radio-two-hours-after-dinner" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                        <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label">Через 2 часа после ужина</label>
-                                    </li>
-                                    <li class="popup__checkbox-item list__item">
-                                        <input id="popup-radio-before-sleep" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                        <label for="popup-radio-before-sleep" class="popup__radio-label">Натощак перед сном</label>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="popup__item">
                             <label for="popup-glucose-level" class="popup__label">Уровень глюкозы</label>
@@ -211,13 +244,49 @@
                             <input id="popup-glucose-level" class="popup__input" type="number" required>
                         </li>
                         <li class="popup__item">
+                                <label for="popup-insuline-type-button" class="popup__label">Тип вводимого инсулина</label>                                
+                                <button type="button" id="popup-insuline-type-button" class="popup__input" required>
+                                <span class="popup__radio-button-label"></span>
+                                </button>
+                                <div class="popup__radio-input-wrapper popup__radio-input-wrapper--insuline-type">
+                                    <div class="popup__radio-header">
+                                        <h3 class="popup__radio-title">Тип вводимого инсулина</h3>
+                                        <button type="button" class="popup__radio-button">
+                                            <span class="visually-hidden">Закрыть</span>
+                                        </button>
+                                    </div>
+                                    <ul class="popup__checkbox-list list">
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-insuline-empty" type="radio" required class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <label for="popup-radio-insuline-empty" class="popup__radio-label">-</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-insuline-ultra-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <label for="popup-radio-insuline-ultra-short" class="popup__radio-label">Ультракороткого действия</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-insuline-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <label for="popup-radio-insuline-short" class="popup__radio-label">Короткого действия</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-insuline-middle" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <label for="popup-radio-insuline-middle" class="popup__radio-label">Среднего действия</label>
+                                        </li>
+                                        <li class="popup__checkbox-item list__item">
+                                            <input id="popup-radio-insuline-long" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <label for="popup-radio-insuline-long" class="popup__radio-label">Длительного действия</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </li>
+                        <li class="popup__item">
                             <label for="popup-insulin-number" class="popup__label">Количество вводимого инсулина</label>
-                            <span class="popup__required">Required</span>
+                            
                             <input id="popup-insulin-number" class="popup__input" type="number">
                         </li>
                         <li class="popup__item">
                             <label for="popup-commentary" class="popup__label">Комментарий</label>
-                            <span class="popup__required">Required</span>
+                            
                             <textarea id="popup-commentary" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
                         </li>
                     </ul>
@@ -225,5 +294,6 @@
             </div>
         </section>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
