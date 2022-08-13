@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <!-- fonts start-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- fonts end-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="/css/drop-default-styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Дневник</h1>
+        <!-- <input type="text" class="header__input">-->
+        <button class="header__search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"  height="24" ><defs><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Bold"><path d="M21.5123 19.164L17.6439 15.2934C18.8217 13.5292 19.3017 11.3898 18.9903 9.29116C18.6789 7.19255 17.5985 5.28485 15.9592 3.93914C14.3199 2.59343 12.2389 1.90593 10.121 2.01037C8.00312 2.1148 5.99979 3.00371 4.50067 4.50418C3.00155 6.00464 2.11384 8.00939 2.01021 10.1285C1.90658 12.2475 2.59445 14.3294 3.94 15.9692C5.28555 17.6089 7.19258 18.6892 9.29015 19C11.3877 19.3108 13.5258 18.8299 15.2886 17.6507L19.1571 21.5205C19.4721 21.8279 19.8947 22 20.3347 22C20.7747 22 21.1973 21.8279 21.5123 21.5205C21.8246 21.208 22 20.7842 22 20.3422C22 19.9003 21.8246 19.4765 21.5123 19.164V19.164ZM10.549 4.50993C11.7432 4.50993 12.9106 4.86424 13.9035 5.52806C14.8965 6.19189 15.6704 7.13541 16.1274 8.23931C16.5844 9.34321 16.704 10.5579 16.471 11.7298C16.238 12.9017 15.6629 13.9781 14.8185 14.823C13.9741 15.6679 12.8982 16.2433 11.727 16.4764C10.5557 16.7095 9.3417 16.5899 8.2384 16.1326C7.13511 15.6754 6.1921 14.901 5.52864 13.9076C4.86518 12.9141 4.51106 11.7461 4.51106 10.5512C4.51283 8.9495 5.14953 7.4139 6.28149 6.28132C7.41345 5.14875 8.9482 4.51169 10.549 4.50993V4.50993Z"></path></svg></defs><use xlink:href="#Bold" fill="#007E7E"></use></svg>
+        </button> 
+    </header>
+    <main class="main">        
+        <div class="container">
+          <section class="data">            
+            <div class="data__buttons-wrapper">
+                <ul class="data__button-list">
+                    <li class="data__button-item"><button type="button" class="data__button data__button--active">Глюкоза</button></li>
+                    <li class="data__button-item"><button type="button" class="data__button">Вес</button></li>
+                    <li class="data__button-item"><button type="button" class="data__button">Питание</button></li>
+                </ul>                
+            </div>
+            <div class="data__sections-wrapper">
+                <section class="content-section content-section--active">
+                    <ul class="content-section__list list">
+                        <li class="content-section__item list__item">
+                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        </li>
+                        <li class="content-section__item list__item">
+                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        </li>
+                        <li class="content-section__item list__item">
+                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        </li>
+                        <li class="content-section__item list__item">
+                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        </li>
+                    </ul>
+                    <button type="button" class="content-section__input-data-button">
+                        <svg id="Bold" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M12.842.447a1.036,1.036,0,0,0-1.684,0C11.086.558,4,11.735,4,15.986a8,8,0,0,0,16,0C20,11.736,12.914.558,12.842.447ZM12,21.236a5.256,5.256,0,0,1-5.25-5.25.75.75,0,0,1,1.5,0A3.755,3.755,0,0,0,12,19.736a.75.75,0,1,1,0,1.5Z"></path></svg>
+                    </button>
+                </section>
+                <section class="content-section"></section>
+                <section class="content-section"></section>
+            </div>
+          </section>
+        </div>
+
+        <section class="details details--glucose">    
+            <div class="container">       
+            <div class="details__content">
+                <h2 class="details__title">
+                    Ваши данные
+                </h2>
+                <ul class="details__list list">
+                    <li class="list__item">
+                        <div class="list__name">Дата и время</div>
+                        <div class="list__content">8/9/2022, 9:38 PM</div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__name">Уровень глюкозы</div>
+                        <div class="list__content">5.5 ммоль/л</div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__name">Тип измерения</div>
+                        <div class="list__content">Натощак перед приемом пищи</div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__name">Тип инсулина</div>
+                        <div class="list__content">Короткого действия</div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__name">Количество вводимого инсулина</div>
+                        <div class="list__content">5 ед.</div>
+                    </li>
+                </ul>                
+            </div>
+            <div class="details__commentary">
+                <h2 class="details__title">
+                    Комментарий
+                </h2>
+                <p class="details__text">
+                    Тестовый комментарий
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <section class="details details--weight">    
+            <div class="container">       
+            <div class="details__content">
+                <h2 class="details__title">
+                    Ваши данные
+                </h2>
+                <ul class="details__list list">
+                    <li class="list__item">
+                        <div class="list__name">Дата и время</div>
+                        <div class="list__content">8/9/2022, 9:38 PM</div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__name">Вес</div>
+                        <div class="list__content">50 кг.</div>
+                    </li>                    
+                </ul>                
+            </div>
+            <div class="details__commentary">
+                <h2 class="details__title">
+                    Комментарий
+                </h2>
+                <p class="details__text">
+                    Тестовый комментарий
+                </p>
+            </div>
+            </div>
+        </section>
+        <section class="details details--dish">  
+                <div class="details__img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582169505937-b9992bd01ed9?ixid=MnwxMDEzNjV8MHwxfHNlYXJjaHw2fHxlZ2dzfGVufDB8fHx8MTY1NDg1OTc1NQ&ixlib=rb-1.2.1&utm_source=Glide&utm_medium=referral&w=700&h=231&dpr=1&fit=crop&auto=format" alt="" class="details__img">
+                    <h2 class="details__title-for-dish">Овощная запеканка</h2>
+                </div>  
+            <div class="container">   
+                <div class="details__content">                    
+                    <ul class="details__list list">
+                        <li class="list__item">
+                            <div class="list__name">Дата и время</div>
+                            <div class="list__content">9/8/2022, 9:38 PM</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__name">Тип приема пищи</div>
+                            <div class="list__content">Завтрак</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__name">Порция</div>
+                            <div class="list__content">150 гр.</div>
+                        </li> 
+                        <li class="list__item">
+                            <div class="list__name">Количество ккал.</div>
+                            <div class="list__content">Количество ккал.</div>
+                        </li>                     
+                    </ul>                
+                </div>            
+            </div>
+        </section>
+    </main>
+    <div class="popup-wrapper">
+        <section class="popup">        
+            <div class="popup__header"></div>
+            <div class="popup__body">
+                <form action="" class="popup__form">
+                    <ul class="popup__list">
+                        <li class="popup__item">
+                            <label for="popup-datetime" class="popup__label">Дата</label>
+                            <span class="popup__required">Required</span>
+                            <input id="popup-datetime" class="popup__input" type="datetime-local" required>
+                        </li>
+                        <li class="popup__item">
+                            <label for="popup-glucose-measure-type" class="popup__label">Тип измерения</label>
+                                <span class="popup__required">Required</span>
+                                <button type="button" id="popup-glucose-measure-type" class="popup__input" type="number" required>
+                                    <span class="popup__radio-button-label"></span>
+                                </button>
+                            <div class="popup__radio-input-wrapper">
+                                <div class="popup__radio-header">
+                                    <h3 class="popup__radio-title">Тип измерения</h3>
+                                    <button class="popup__radio-button"></button>
+                                </div>
+                                <ul class="popup__checkbox-list list">
+                                    <li class="popup__checkbox-item list__item">
+                                        <input id="popup-radio-before-dish" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                        <label for="popup-radio-before-dish" class="popup__radio-label">Натощак перед приемом пищи</label>
+                                    </li>
+                                    <li class="popup__checkbox-item list__item">
+                                        <input id="popup-radio-two-hours-after-breakfast" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                        <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label">Через 2 часа после завтрака</label>
+                                    </li>
+                                    <li class="popup__checkbox-item list__item">
+                                        <input id="popup-radio-two-hours-after-lunch" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                        <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label">Через 2 часа после обеда</label>
+                                    </li>
+                                    <li class="popup__checkbox-item list__item">
+                                        <input id="popup-radio-two-hours-after-dinner" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                        <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label">Через 2 часа после ужина</label>
+                                    </li>
+                                    <li class="popup__checkbox-item list__item">
+                                        <input id="popup-radio-before-sleep" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                        <label for="popup-radio-before-sleep" class="popup__radio-label">Натощак перед сном</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="popup__item">
+                            <label for="popup-glucose-level" class="popup__label">Уровень глюкозы</label>
+                            <span class="popup__required">Required</span>
+                            <input id="popup-glucose-level" class="popup__input" type="number" required>
+                        </li>
+                        <li class="popup__item">
+                            <label for="popup-insulin-number" class="popup__label">Количество вводимого инсулина</label>
+                            <span class="popup__required">Required</span>
+                            <input id="popup-insulin-number" class="popup__input" type="number">
+                        </li>
+                        <li class="popup__item">
+                            <label for="popup-commentary" class="popup__label">Комментарий</label>
+                            <span class="popup__required">Required</span>
+                            <textarea id="popup-commentary" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

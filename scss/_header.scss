@@ -1,0 +1,28 @@
+.header {    
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-combine-upright: 0;
+    background-color: #fff;
+    height: 56px;    
+    &__title {        
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color:rgb(0, 126, 126);
+    }
+    &__search-btn{
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        path{
+           fill:rgb(0, 126, 126);
+        }
+    }
+}

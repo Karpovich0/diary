@@ -1,0 +1,55 @@
+.data {
+    display: grid;
+    grid-template-rows: max-content 1fr;  
+    &__buttons-wrapper {
+        padding: 8px 0;       
+    }
+    &__button-list{
+        padding: 2px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        height: 38px;
+        border-radius: 6px;
+        background:rgba(0, 0, 0, 0.05);
+    }
+    &__button-item:last-child .data__button::after{
+            content: none;
+    }
+
+    &__button {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-family: inherit; 
+        color: rgb(17, 17, 17);        
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 400;            
+        &::after{
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 50%;
+            top: 25%;
+            right: 0;
+            background-color: rgb(153, 153, 153);
+            opacity: 0.24;
+          
+        } 
+         
+    }
+    &__button--active{      
+        color: rgb(0, 126, 126);
+        background-color: rgb(255, 255, 255);
+        font-weight: 600;
+        box-shadow: rgba(#000, 0.1) 0px 4px 13px;
+       
+    }
+    &__sections-wrapper{
+       padding-bottom: 15px;       
+    }
+}

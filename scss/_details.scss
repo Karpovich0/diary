@@ -1,0 +1,53 @@
+.details {
+    display: none;
+    &--glucose{
+    display: none;
+    background-color: #f6f6f6;    
+    }
+    &__content {
+        padding: 8px 0;
+        background-color: #fff;
+    }
+    &__list{
+        li:last-child{
+          border-bottom: 0;
+        }
+    }
+    &__title{
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;       
+    }
+    &__text{
+        --fg: rgb(0,75,75);
+        --bg: rgba(0,126,126,0.1);
+        --border-color: rgba(0,75,75,0.1);
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+        margin: 8px 0;
+        color: var(--fg);
+        background-color: var(--bg);
+    }
+    &__img-wrapper{
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+    }
+    &__title-for-dish{
+        width: 100%;
+        padding: 16px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #fff;
+        text-shadow: rgba(#000, 0.5) 0 0 4px;
+        padding: 16px;
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    }
+}

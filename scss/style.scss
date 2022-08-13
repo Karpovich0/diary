@@ -1,0 +1,37 @@
+$green:rgb(0, 126, 126);
+$font-black:rgb(17, 17, 17);
+$font-gray: rgb(85, 85, 85);
+$popuo-white-bg:rgb(246, 246, 246);
+body{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    height: 100%;
+}
+.main {    
+    padding-top: 56px;
+    background-color: #f6f6f6;
+    min-height: 100vh;
+    @media(min-width:600px){
+        padding-top: 72px;
+    }
+}
+.container{
+    padding: 0 16px;
+    margin: 0 auto 16px;
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;    
+    border-radius: 10px;
+}
+
+@import 'header';
+@import 'data';
+@import 'content-section';
+@import 'list';
+@import 'details';
+@import 'popup';
+
+
