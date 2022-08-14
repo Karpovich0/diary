@@ -21,6 +21,7 @@ const popupRadioLabelArrayWeight = document.querySelectorAll(".popup__radio-labe
 const searchButtonOpen = document.querySelector(".header__search-btn--open");
 const searchButtonClose = document.querySelector(".header__search-btn--close");
 const headerSearchForm = document.querySelector(".header__search-form");
+const headerSearchResults = document.querySelector(".header__search-results");
 //remove all curent section kickstart
 removeCurrentSection();
 
@@ -29,8 +30,7 @@ for(let i = 0; i < dataButtonArray.length; i++){
     dataButtonArray[i].addEventListener("click", function(ent){       
         removeCurrentSection();        
         dataButtonArrayItem[i].classList.add("data__button-item--current");
-        sectionArray[i].classList.add("content-section--current");
-        console.log("add current");
+        sectionArray[i].classList.add("content-section--current");       
     })
 }
 
@@ -46,8 +46,7 @@ for(let i = 0; i < contentSectionButtonArray.length; i++){
 }
 for(let i = 0; i < detailsBackButtonArray.length; i++){
     detailsBackButtonArray[i].addEventListener("click", function(ent){       
-        detailsArray[i].classList.remove("details--current");
-        console.log("close details");
+        detailsArray[i].classList.remove("details--current");        
     })
 }
 
@@ -59,8 +58,7 @@ for(let i = 0; i < contentSectionButton.length; i++){
 
 for(let i = 0; i < popupButtonResetCloseArray.length; i++){
     popupButtonResetCloseArray[i].addEventListener("click", function(ent){  
-        popupWrapperArray[i].classList.remove("popup-wrapper--current");
-        console.log("Close");
+        popupWrapperArray[i].classList.remove("popup-wrapper--current");        
     })
 };
 // works with radio
@@ -80,8 +78,7 @@ for(let i = 0; i < popupRadioLabelArrayGlucose.length; i++){
 };
 
 popupOpenRadioInsuline.addEventListener("click", function(evt){    
-    document.querySelector(".popup__radio-input-wrapper--insuline-type").classList.add("popup__radio-input-wrapper--current");
-    console.log("open radio");
+    document.querySelector(".popup__radio-input-wrapper--insuline-type").classList.add("popup__radio-input-wrapper--current");    
 });
 
 //close insuline radio when u press on cross button
@@ -98,10 +95,31 @@ for(let i = 0; i < popupRadioLabelArrayWeight.length; i++){
 
 searchButtonOpen.addEventListener("click", function(evt){
     headerSearchForm.classList.add("header__search-form--current");
+    headerSearchResults.classList.add("header__search-results--current");
 });
 searchButtonClose.addEventListener("click", function(evt){
     headerSearchForm.classList.remove("header__search-form--current");
+    headerSearchResults.classList.remove("header__search-results--current");
 })
+
+// 
+
+//search
+
+function search() {
+ 
+    var name = document.getElementById("searchForm").elements["searchItem"].value;
+    var pattern = name.toLowerCase();
+    var targetId = "";
+  
+    var divs = document.getElementsByClassName("col-md-2");
+    for (var i = 0; i < divs.length; i++) {
+       var para = divs[i].getElementsByTagName("p");
+       var index = para[0].innerText.toLowerCase().indexOf(pattern);
+       
+    }  
+ }
+
 // close radio fields
 function closeRadio(){
     document.querySelector(".popup__radio-input-wrapper--measure-type").classList.remove("popup__radio-input-wrapper--current");
@@ -111,8 +129,6 @@ function closeRadioInsuline(){
     document.querySelector(".popup__radio-input-wrapper--insuline-type").classList.remove("popup__radio-input-wrapper--current");
 }
 
-
-
 //remove all curent section
 function removeCurrentSection(){
     if(document.querySelector(".content-section--current")){       
@@ -120,6 +136,5 @@ function removeCurrentSection(){
     }
     if(document.querySelector(".data__button-item--current")){  
         document.querySelector(".data__button-item--current").classList.remove("data__button-item--current");
-    }
-    console.log("removed current");
+    }    
 }

@@ -8,7 +8,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    background-color: #f6f6f6;
+   
     height: 100%;
 }
 .main {    
@@ -17,6 +17,9 @@ body{
     min-height: 100vh;
     @media(min-width:600px){
         padding-top: 72px;
+    }
+    input:focus, textarea:focus{
+        outline-color: $green;
     }
 }
 .container{
