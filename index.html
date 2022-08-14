@@ -8,20 +8,34 @@
     <!-- fonts start-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- fonts end-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="/css/drop-default-styles.css">
     <link rel="stylesheet" href="/css/style.css">
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Дневник</h1>
         <!-- <input type="text" class="header__input">-->
-        <button class="header__search-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"  height="24" ><defs><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Bold"><path d="M21.5123 19.164L17.6439 15.2934C18.8217 13.5292 19.3017 11.3898 18.9903 9.29116C18.6789 7.19255 17.5985 5.28485 15.9592 3.93914C14.3199 2.59343 12.2389 1.90593 10.121 2.01037C8.00312 2.1148 5.99979 3.00371 4.50067 4.50418C3.00155 6.00464 2.11384 8.00939 2.01021 10.1285C1.90658 12.2475 2.59445 14.3294 3.94 15.9692C5.28555 17.6089 7.19258 18.6892 9.29015 19C11.3877 19.3108 13.5258 18.8299 15.2886 17.6507L19.1571 21.5205C19.4721 21.8279 19.8947 22 20.3347 22C20.7747 22 21.1973 21.8279 21.5123 21.5205C21.8246 21.208 22 20.7842 22 20.3422C22 19.9003 21.8246 19.4765 21.5123 19.164V19.164ZM10.549 4.50993C11.7432 4.50993 12.9106 4.86424 13.9035 5.52806C14.8965 6.19189 15.6704 7.13541 16.1274 8.23931C16.5844 9.34321 16.704 10.5579 16.471 11.7298C16.238 12.9017 15.6629 13.9781 14.8185 14.823C13.9741 15.6679 12.8982 16.2433 11.727 16.4764C10.5557 16.7095 9.3417 16.5899 8.2384 16.1326C7.13511 15.6754 6.1921 14.901 5.52864 13.9076C4.86518 12.9141 4.51106 11.7461 4.51106 10.5512C4.51283 8.9495 5.14953 7.4139 6.28149 6.28132C7.41345 5.14875 8.9482 4.51169 10.549 4.50993V4.50993Z"></path></svg></defs><use xlink:href="#Bold" fill="#007E7E"></use></svg>
-        </button> 
+        <button type="button" class="header__search-btn header__search-btn--open">
+            <svg viewBox="0 0 24 24" width="24"  height="24" xmlns="http://www.w3.org/2000/svg" ><path fill="#007E7E" d="M21.5123 19.164L17.6439 15.2934C18.8217 13.5292 19.3017 11.3898 18.9903 9.29116C18.6789 7.19255 17.5985 5.28485 15.9592 3.93914C14.3199 2.59343 12.2389 1.90593 10.121 2.01037C8.00312 2.1148 5.99979 3.00371 4.50067 4.50418C3.00155 6.00464 2.11384 8.00939 2.01021 10.1285C1.90658 12.2475 2.59445 14.3294 3.94 15.9692C5.28555 17.6089 7.19258 18.6892 9.29015 19C11.3877 19.3108 13.5258 18.8299 15.2886 17.6507L19.1571 21.5205C19.4721 21.8279 19.8947 22 20.3347 22C20.7747 22 21.1973 21.8279 21.5123 21.5205C21.8246 21.208 22 20.7842 22 20.3422C22 19.9003 21.8246 19.4765 21.5123 19.164V19.164ZM10.549 4.50993C11.7432 4.50993 12.9106 4.86424 13.9035 5.52806C14.8965 6.19189 15.6704 7.13541 16.1274 8.23931C16.5844 9.34321 16.704 10.5579 16.471 11.7298C16.238 12.9017 15.6629 13.9781 14.8185 14.823C13.9741 15.6679 12.8982 16.2433 11.727 16.4764C10.5557 16.7095 9.3417 16.5899 8.2384 16.1326C7.13511 15.6754 6.1921 14.901 5.52864 13.9076C4.86518 12.9141 4.51106 11.7461 4.51106 10.5512C4.51283 8.9495 5.14953 7.4139 6.28149 6.28132C7.41345 5.14875 8.9482 4.51169 10.549 4.50993V4.50993Z"></path></svg>
+        </button>
+        <form action="" class="header__search-form">
+            <input type="search" class="header__search-input" placeholder="Search">
+            <button type="reset" class="header__search-btn header__search-btn--close">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="#007E7E" xmlns="http://www.w3.org/2000/svg"><path fillrule="evenodd" cliprule="evenodd" d="M5.98949 4.57537C5.79423 4.38011 5.47765 4.38011 5.28239 4.57537L4.57528 5.28248C4.38002 5.47774 4.38002 5.79432 4.57528 5.98958L10.5857 12L4.57539 18.0104C4.38012 18.2057 4.38012 18.5222 4.57539 18.7175L5.28249 19.4246C5.47775 19.6199 5.79434 19.6199 5.9896 19.4246L12 13.4143L18.0103 19.4246C18.2056 19.6199 18.5222 19.6199 18.7174 19.4246L19.4245 18.7175C19.6198 18.5222 19.6198 18.2057 19.4245 18.0104L13.4142 12L19.4246 5.98958C19.6199 5.79432 19.6199 5.47774 19.4246 5.28248L18.7175 4.57537C18.5223 4.38011 18.2057 4.38011 18.0104 4.57537L12 10.5858L5.98949 4.57537Z"></path></svg>
+            </button>
+        </form> 
     </header>
     <main class="main">        
         <div class="container">
@@ -51,54 +65,64 @@
                         <li class="content-section__item list__item">
                             <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
                             <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
-                        </li>
+                        </li>                        
                     </ul>
-                    <button type="button" class="content-section__input-data-button">
+                    <div class="conatent-section__button-add-wrapper">
+                        <button type="button" class="content-section__button-add">Добавить</button>
+                    </div>
+                    <button type="button" class="content-section__input-data-button content-section__input-data-button--glucose">
                         <svg id="Bold" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M12.842.447a1.036,1.036,0,0,0-1.684,0C11.086.558,4,11.735,4,15.986a8,8,0,0,0,16,0C20,11.736,12.914.558,12.842.447ZM12,21.236a5.256,5.256,0,0,1-5.25-5.25.75.75,0,0,1,1.5,0A3.755,3.755,0,0,0,12,19.736a.75.75,0,1,1,0,1.5Z"></path></svg>
                     </button>
                 </section>
                 <section class="content-section content-section--weight">
                     <ul class="content-section__list list">
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                            <time class="content-section__name list__name">8/9/2022, 9:59 PM</time>
+                            <button type="button" class="content-section__button list__content">50 кг.</button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                            <time class="content-section__name list__name">8/9/2022, 10:02 PM</time>
+                            <button type="button" class="content-section__button list__content">65 кг.</button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
-                        </li>
-                        <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
-                        </li>
+                            <time class="content-section__name list__name">8/9/2022, 10:03 PM</time>
+                            <button type="button" class="content-section__button list__content">75 кг.</button>
+                        </li>                                               
                     </ul>
-                    <button type="button" class="content-section__input-data-button">
-                        <svg id="Bold" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M12.842.447a1.036,1.036,0,0,0-1.684,0C11.086.558,4,11.735,4,15.986a8,8,0,0,0,16,0C20,11.736,12.914.558,12.842.447ZM12,21.236a5.256,5.256,0,0,1-5.25-5.25.75.75,0,0,1,1.5,0A3.755,3.755,0,0,0,12,19.736a.75.75,0,1,1,0,1.5Z"></path></svg>
+                    <div class="conatent-section__button-add-wrapper">
+                        <button type="button" class="content-section__button-add">Добавить</button>
+                    </div> 
+                    <button type="button" class="content-section__input-data-button content-section__input-data-button--weight">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="21" height="22"><path fill="#FFFFFF" d="M23.441,5.085a1.493,1.493,0,0,0-.553-1.328A17.2,17.2,0,0,0,12,0,17.2,17.2,0,0,0,1.113,3.757,1.493,1.493,0,0,0,.559,5.085l1.85,17.571A1.5,1.5,0,0,0,3.9,24H20.1a1.5,1.5,0,0,0,1.491-1.343ZM20.5,8.5A.5.5,0,0,1,20,9H13.721a.5.5,0,0,1-.475-.342l-.772-2.316a.52.52,0,0,0-.948,0l-.772,2.316A.5.5,0,0,1,10.28,9H4a.5.5,0,0,1-.5-.5V5.367a.5.5,0,0,1,.226-.419A14.422,14.422,0,0,1,5.8,3.828a.5.5,0,0,1,.674.291L7.211,6.2a.75.75,0,1,0,1.414-.5L7.85,3.511A.393.393,0,0,1,8.12,3a14.681,14.681,0,0,1,2.589-.441.5.5,0,0,1,.541.5V4a.75.75,0,0,0,1.5,0V3.057a.5.5,0,0,1,.542-.5A14.654,14.654,0,0,1,15.88,3a.393.393,0,0,1,.27.511L15.375,5.7a.75.75,0,1,0,1.414.5l.737-2.085a.5.5,0,0,1,.674-.291,14.369,14.369,0,0,1,2.074,1.12.5.5,0,0,1,.226.418Z"></path></svg>
                     </button>
                 </section>
                 <section class="content-section  content-section--dish">
                     <ul class="content-section__list list">
-                        <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        <li class="content-section__item content-section__item--dish list__item">
+                            <div class="content-section__item-inner">
+                                <img src="https://images.unsplash.com/photo-1582169505937-b9992bd01ed9?ixid=MnwxMDEzNjV8MHwxfHNlYXJjaHw2fHxlZ2dzfGVufDB8fHx8MTY1NDg1OTc1NQ&ixlib=rb-1.2.1&utm_source=Glide&utm_medium=referral&w=200&h=200&dpr=1&fit=crop&auto=format" alt="" class="content-section__item-img">
+                                <time class="content-section__name list__name">9/8/2022, 9:38 PM</time>
+                            </div>
+                            <button type="button" class="content-section__button list__content">340 ккал.</button>
                         </li>
-                        <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        <li class="content-section__item content-section__item--dish list__item">
+                            <div class="content-section__item-inner">
+                                <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2F3XzLGy3fbb2xRPSHerIH.jpg" alt="" class="content-section__item-img">
+                                <time class="content-section__name list__name">9/8/2022, 9:39 PM</time>
+                            </div>
+                            <button type="button" class="content-section__button list__content">350 ккал.</button>
                         </li>
-                        <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                        <li class="content-section__item content-section__item--dish list__item">
+                            <div class="content-section__item-inner">
+                                <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2FS4Pii6I7fR8OjKfaoUM6.jpg" alt="" class="content-section__item-img">
+                                <time class="content-section__name list__name">9/8/2022, 9:44 PM</time>
+                            </div>
+                            <button type="button" class="content-section__button list__content">480 ккал.</button>
                         </li>
-                        <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
-                        </li>
-                    </ul>                    
+                    </ul>
+                    <div class="conatent-section__button-add-wrapper">
+                        <button type="button" class="content-section__button-add">Добавить</button>
+                    </div>                     
                 </section>
             </div>
           </section>
@@ -227,7 +251,7 @@
             </div>
         </section>
     </main>
-    <div class="popup-wrapper">
+    <div class="popup-wrapper popup-wrapper--glucose">
         <section class="popup">  
             <div class="popup__body">
                 <form action="" class="popup__form">      
@@ -245,7 +269,7 @@
                         <li class="popup__item">
                             <label for="popup-glucose-measure-type" class="popup__label">Тип измерения</label>
                                 <span class="popup__required">Required</span>
-                                <button type="button" id="popup-glucose-measure-type" class="popup__input" required>
+                                <button type="button" id="popup-glucose-measure-type" class="popup__input popup__input--button" required>
                                     <span class="popup__radio-button-label"></span>
                                 </button>
                                 <div class="popup__radio-input-wrapper popup__radio-input-wrapper--measure-type">
@@ -258,35 +282,36 @@
                                     <ul class="popup__checkbox-list list">
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-before-dish" type="radio" required checked class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                            <label for="popup-radio-before-dish" class="popup__radio-label">Натощак перед приемом пищи</label>
+                                            <label for="popup-radio-before-dish" class="popup__radio-label popup__radio-label--glucose">Натощак перед приемом пищи</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-two-hours-after-breakfast" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                            <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label">Через 2 часа после завтрака</label>
+                                            <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после завтрака</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-two-hours-after-lunch" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                            <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label">Через 2 часа после обеда</label>
+                                            <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после обеда</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-two-hours-after-dinner" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                            <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label">Через 2 часа после ужина</label>
+                                            <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после ужина</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-before-sleep" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
-                                            <label for="popup-radio-before-sleep" class="popup__radio-label">Натощак перед сном</label>
+                                            <label for="popup-radio-before-sleep" class="popup__radio-label popup__radio-label--glucose">Натощак перед сном</label>
                                         </li>
                                     </ul>
                                 </div>
                         </li>
-                        <li class="popup__item">
+                        <li class="popup__item popup__item-with-description">
                             <label for="popup-glucose-level" class="popup__label">Уровень глюкозы</label>
                             <span class="popup__required">Required</span>
-                            <input id="popup-glucose-level" class="popup__input" type="number" required>
+                            <span class="popup__labels-description">ммоль/ л</span>
+                            <input id="popup-glucose-level" class="popup__input" type="number" step="0.1" required>
                         </li>
                         <li class="popup__item">
                                 <label for="popup-insuline-type-button" class="popup__label">Тип вводимого инсулина</label>                                
-                                <button type="button" id="popup-insuline-type-button" class="popup__input" required>
+                                <button type="button" id="popup-insuline-type-button" class="popup__input popup__input--button" required>
                                 <span class="popup__radio-button-label"></span>
                                 </button>
                                 <div class="popup__radio-input-wrapper popup__radio-input-wrapper--insuline-type">
@@ -299,23 +324,23 @@
                                     <ul class="popup__checkbox-list list">
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-insuline-empty" type="radio" required class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
-                                            <label for="popup-radio-insuline-empty" class="popup__radio-label">-</label>
+                                            <label for="popup-radio-insuline-empty" class="popup__radio-label popup__radio-label--weight">-</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-insuline-ultra-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
-                                            <label for="popup-radio-insuline-ultra-short" class="popup__radio-label">Ультракороткого действия</label>
+                                            <label for="popup-radio-insuline-ultra-short" class="popup__radio-label popup__radio-label--weight">Ультракороткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-insuline-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
-                                            <label for="popup-radio-insuline-short" class="popup__radio-label">Короткого действия</label>
+                                            <label for="popup-radio-insuline-short" class="popup__radio-label popup__radio-label--weight">Короткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-insuline-middle" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
-                                            <label for="popup-radio-insuline-middle" class="popup__radio-label">Среднего действия</label>
+                                            <label for="popup-radio-insuline-middle" class="popup__radio-label popup__radio-label--weight">Среднего действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
                                             <input id="popup-radio-insuline-long" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
-                                            <label for="popup-radio-insuline-long" class="popup__radio-label">Длительного действия</label>
+                                            <label for="popup-radio-insuline-long" class="popup__radio-label popup__radio-label--weight">Длительного действия</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -329,6 +354,38 @@
                             <label for="popup-commentary" class="popup__label">Комментарий</label>
                             
                             <textarea id="popup-commentary" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="popup-wrapper popup-wrapper--weight">
+
+    <section class="popup">  
+            <div class="popup__body">
+                <form action="" class="popup__form">      
+                    <div class="popup__header">
+                        <button type="reset" class="popup__button-reset-close"></button>
+                        <h2 class="popup__title">Добавить запись (вес)</h2>
+                        <button type="submit" class="popup__button-submit-open"></button>
+                    </div>            
+                    <ul class="popup__list">
+                        <li class="popup__item">
+                            <label for="popup-datetime--weight" class="popup__label">Дата</label>
+                            <span class="popup__required">Required</span>
+                            <input id="popup-datetime--weight" class="popup__input" type="datetime-local" required>
+                        </li>
+                        <li class="popup__item popup__item-with-description">
+                            <label for="popup-datetime--weight" class="popup__label">Вес</label>
+                            <span class="popup__required">Required</span>
+                            <span class="popup__labels-description">кг.</span>
+                            <input id="popup-datetime--weight" class="popup__input" type="number" required>
+                        </li>                         
+                        <li class="popup__item">
+                            <label for="popup-commentary--weight" class="popup__label">Комментарий</label>                            
+                            <textarea id="popup-commentary--weight" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
                         </li>
                     </ul>
                 </form>

@@ -1,5 +1,6 @@
 //change current section
 const dataButtonArray = document.querySelectorAll(".data__button");
+const dataButtonArrayItem = document.querySelectorAll(".data__button-item");
 const sectionArray = document.querySelectorAll(".content-section");
 //open details about data
 const contentSectionButtonArray = document.querySelectorAll(".content-section__button");
@@ -14,7 +15,12 @@ const popupOpenRadioMesuare = document.querySelector("#popup-glucose-measure-typ
 const popupOpenRadioInsuline = document.querySelector("#popup-insuline-type-button");
 const popupRadioButtonCloseMeasure = document.querySelector(".popup__radio-button--measure");
 const popupRadioButtonCloseInsuline = document.querySelector(".popup__radio-button--insuline");
-const popupRadioLabelArray = document.querySelectorAll(".popup__radio-label");
+const popupRadioLabelArrayGlucose = document.querySelectorAll(".popup__radio-label--glucose");
+const popupRadioLabelArrayWeight = document.querySelectorAll(".popup__radio-label--weight");
+// open search input
+const searchButtonOpen = document.querySelector(".header__search-btn--open");
+const searchButtonClose = document.querySelector(".header__search-btn--close");
+const headerSearchForm = document.querySelector(".header__search-form");
 //remove all curent section kickstart
 removeCurrentSection();
 
@@ -22,7 +28,7 @@ removeCurrentSection();
 for(let i = 0; i < dataButtonArray.length; i++){
     dataButtonArray[i].addEventListener("click", function(ent){       
         removeCurrentSection();        
-        dataButtonArray[i].classList.add("data__button--current");
+        dataButtonArrayItem[i].classList.add("data__button-item--current");
         sectionArray[i].classList.add("content-section--current");
         console.log("add current");
     })
@@ -30,9 +36,12 @@ for(let i = 0; i < dataButtonArray.length; i++){
 
 //listen click on content-section-button to open details
 for(let i = 0; i < contentSectionButtonArray.length; i++){
-    contentSectionButtonArray[i].addEventListener("click", function(ent){       
-        detailsArray[i].classList.add("details--current");
-        console.log("open details");
+    contentSectionButtonArray[i].addEventListener("click", function(ent){   
+        if(detailsArray[i]){    
+            detailsArray[i].classList.add("details--current");
+        }else{
+            console.log("details not exist");
+        }
     })
 }
 for(let i = 0; i < detailsBackButtonArray.length; i++){
@@ -63,8 +72,9 @@ popupRadioButtonCloseMeasure.addEventListener("click", function(evt){
     closeRadio();
 });
 //close radio when u press on radio input
-for(let i = 0; i < popupRadioLabelArray.length; i++){
-    popupRadioLabelArray[i].addEventListener("click", function(ent){ 
+for(let i = 0; i < popupRadioLabelArrayGlucose.length; i++){
+    popupRadioLabelArrayGlucose[i].addEventListener("click", function(ent){
+       popupOpenRadioMesuare.textContent = popupRadioLabelArrayGlucose[i].textContent;
        closeRadio();
     })
 };
@@ -75,18 +85,24 @@ popupOpenRadioInsuline.addEventListener("click", function(evt){
 });
 
 //close insuline radio when u press on cross button
-popupRadioButtonCloseInsuline.addEventListener("click", function(evt){
-    console.log("CLIIICK");
+popupRadioButtonCloseInsuline.addEventListener("click", function(evt){    
     closeRadioInsuline();
 });
 //close radio when u press on radio input
-for(let i = 0; i < popupRadioLabelArray.length; i++){
-    popupRadioLabelArray[i].addEventListener("click", function(ent){ 
-        console.log("CLIIICK");
+for(let i = 0; i < popupRadioLabelArrayWeight.length; i++){
+    popupRadioLabelArrayWeight[i].addEventListener("click", function(ent){
+        popupOpenRadioInsuline.textContent = popupRadioLabelArrayWeight[i].textContent;         
         closeRadioInsuline();
     })
 };
 
+searchButtonOpen.addEventListener("click", function(evt){
+    headerSearchForm.classList.add("header__search-form--current");
+});
+searchButtonClose.addEventListener("click", function(evt){
+    headerSearchForm.classList.remove("header__search-form--current");
+})
+// close radio fields
 function closeRadio(){
     document.querySelector(".popup__radio-input-wrapper--measure-type").classList.remove("popup__radio-input-wrapper--current");
 };
@@ -102,8 +118,8 @@ function removeCurrentSection(){
     if(document.querySelector(".content-section--current")){       
         document.querySelector(".content-section--current").classList.remove("content-section--current");
     }
-    if(document.querySelector(".data__button--current")){  
-        document.querySelector(".data__button--current").classList.remove("data__button--current");
+    if(document.querySelector(".data__button-item--current")){  
+        document.querySelector(".data__button-item--current").classList.remove("data__button-item--current");
     }
     console.log("removed current");
 }

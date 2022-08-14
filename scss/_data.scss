@@ -12,10 +12,25 @@
         border-radius: 6px;
         background:rgba(0, 0, 0, 0.05);
     }
-    &__button-item:last-child .data__button::after{
+    &__button-item{
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 50%;
+            top: 25%;
+            right: -1px;
+            background-color: rgb(153, 153, 153);
+            opacity: 0.24;      
+        }
+        &:last-child::after{
             content: none;
+        }
+    }    
+    &__button-item--current::after{
+        content: none;
     }
-
     &__button {
         padding: 0;
         position: relative;
@@ -28,28 +43,17 @@
         color: rgb(17, 17, 17);        
         cursor: pointer;
         border-radius: 4px;
-        font-weight: 400;            
-        &::after{
-            content: "";
-            position: absolute;
-            width: 1px;
-            height: 50%;
-            top: 25%;
-            right: 0;
-            background-color: rgb(153, 153, 153);
-            opacity: 0.24;
-          
-        } 
-         
-    }
-    &__button--current{      
+        font-weight: 400;
+        
+            
+    }    
+    &__button-item--current  &__button{        
         color: rgb(0, 126, 126);
         background-color: rgb(255, 255, 255);
         font-weight: 600;
-        box-shadow: rgba(#000, 0.1) 0px 4px 13px;
-       
+        box-shadow: rgba(#000, 0.1) 0px 4px 13px;       
     }
     &__sections-wrapper{
-       padding-bottom: 15px;       
+       padding-bottom: 15px;             
     }
 }
