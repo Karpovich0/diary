@@ -22,8 +22,7 @@ const searchButtonOpen = document.querySelector(".header__search-btn--open");
 const searchButtonClose = document.querySelector(".header__search-btn--close");
 const headerSearchForm = document.querySelector(".header__search-form");
 const headerSearchResults = document.querySelector(".header__search-results");
-//remove all curent section kickstart
-removeCurrentSection();
+
 
 //listen click on button to make section current
 for(let i = 0; i < dataButtonArray.length; i++){

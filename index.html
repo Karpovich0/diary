@@ -56,30 +56,38 @@
           <section class="data">            
             <div class="data__buttons-wrapper">
                 <ul class="data__button-list">
-                    <li class="data__button-item"><button type="button" class="data__button data__button--glucose">Глюкоза</button></li>
+                    <li class="data__button-item data__button-item--current"><button type="button" class="data__button data__button--glucose">Глюкоза</button></li>
                     <li class="data__button-item"><button type="button" class="data__button data__button--weight">Вес</button></li>
                     <li class="data__button-item"><button type="button" class="data__button data__button--dish">Питание</button></li>
                 </ul>                
             </div>
             <div class="data__sections-wrapper">
-                <section class="content-section content-section--glucose">
+                <section class="content-section content-section--glucose content-section--current">
                     <ul class="content-section__list list">
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
-                            <button type="button" class="content-section__button list__content">5.5 ммоль/л</button>
-                        </li>                        
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>
+                        </li>                       
                     </ul>
                     <div class="conatent-section__button-add-wrapper">
                         <button type="button" class="content-section__button-add">Добавить</button>
@@ -91,17 +99,29 @@
                 <section class="content-section content-section--weight">
                     <ul class="content-section__list list">
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 9:59 PM</time>
-                            <button type="button" class="content-section__button list__content">50 кг.</button>
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">60 кг.</span>
+                            </button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 10:02 PM</time>
-                            <button type="button" class="content-section__button list__content">65 кг.</button>
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">60 кг.</span>
+                            </button>
                         </li>
                         <li class="content-section__item list__item">
-                            <time class="content-section__name list__name">8/9/2022, 10:03 PM</time>
-                            <button type="button" class="content-section__button list__content">75 кг.</button>
-                        </li>                                               
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">60 кг.</span>
+                            </button>
+                        </li>
+                        <li class="content-section__item list__item">
+                            <button type="button" class="content-section__button list__content">
+                                <time class="content-section__name list__name">8/9/2022, 9:38 PM</time>
+                                <span class="content-section__glucose-level">60 кг.</span>
+                            </button>
+                        </li>                                                
                     </ul>
                     <div class="conatent-section__button-add-wrapper">
                         <button type="button" class="content-section__button-add">Добавить</button>
@@ -112,26 +132,32 @@
                 </section>
                 <section class="content-section  content-section--dish">
                     <ul class="content-section__list list">
-                        <li class="content-section__item content-section__item--dish list__item">
-                            <div class="content-section__item-inner">
-                                <img src="https://images.unsplash.com/photo-1582169505937-b9992bd01ed9?ixid=MnwxMDEzNjV8MHwxfHNlYXJjaHw2fHxlZ2dzfGVufDB8fHx8MTY1NDg1OTc1NQ&ixlib=rb-1.2.1&utm_source=Glide&utm_medium=referral&w=200&h=200&dpr=1&fit=crop&auto=format" alt="" class="content-section__item-img">
-                                <time class="content-section__name list__name">9/8/2022, 9:38 PM</time>
-                            </div>
-                            <button type="button" class="content-section__button list__content">340 ккал.</button>
+                        <li class="content-section__item content-section__item--dish list__item">                            
+                            <button type="button" class="content-section__button list__content">
+                                <div class="content-section__item-inner">
+                                    <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2F3XzLGy3fbb2xRPSHerIH.jpg">
+                                    <time class="content-section__name list__name">9/8/2022, 9:38</time>
+                                </div>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>                            
                         </li>
                         <li class="content-section__item content-section__item--dish list__item">
-                            <div class="content-section__item-inner">
-                                <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2F3XzLGy3fbb2xRPSHerIH.jpg" alt="" class="content-section__item-img">
-                                <time class="content-section__name list__name">9/8/2022, 9:39 PM</time>
-                            </div>
-                            <button type="button" class="content-section__button list__content">350 ккал.</button>
+                            <button type="button" class="content-section__button list__content">
+                                <div class="content-section__item-inner">
+                                    <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2F3XzLGy3fbb2xRPSHerIH.jpg">
+                                    <time class="content-section__name list__name">9/8/2022, 9:38</time>
+                                </div>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>  
                         </li>
                         <li class="content-section__item content-section__item--dish list__item">
-                            <div class="content-section__item-inner">
-                                <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2FS4Pii6I7fR8OjKfaoUM6.jpg" alt="" class="content-section__item-img">
-                                <time class="content-section__name list__name">9/8/2022, 9:44 PM</time>
-                            </div>
-                            <button type="button" class="content-section__button list__content">480 ккал.</button>
+                            <button type="button" class="content-section__button list__content">
+                                <div class="content-section__item-inner">
+                                    <img src="https://res.cloudinary.com/glide/image/fetch/t_media_lib_thumb/https%3A%2F%2Fstorage.googleapis.com%2Fglide-prod.appspot.com%2Fuploads-v2%2FVAMBz84hc5UroBeECZuX%2Fpub%2F3XzLGy3fbb2xRPSHerIH.jpg">
+                                    <time class="content-section__name list__name">9/8/2022, 9:38</time>
+                                </div>
+                                <span class="content-section__glucose-level">5.5 ммоль/л</span>
+                            </button>  
                         </li>
                     </ul>
                     <div class="conatent-section__button-add-wrapper">
@@ -320,12 +346,12 @@
                         <li class="popup__item popup__item-with-description">
                             <label for="popup-glucose-level" class="popup__label">Уровень глюкозы</label>
                             <span class="popup__required">Required</span>
-                            <span class="popup__labels-description">ммоль/ л</span>
+                            <span class="popup__labels-description">ммоль/л</span>
                             <input id="popup-glucose-level" class="popup__input" type="number" step="0.1" required>
                         </li>
                         <li class="popup__item">
                                 <label for="popup-insuline-type-button" class="popup__label">Тип вводимого инсулина</label>                                
-                                <button type="button" id="popup-insuline-type-button" class="popup__input popup__input--button" required>
+                                <button type="button" id="popup-insuline-type-button" class="popup__input popup__input--button">
                                 <span class="popup__radio-button-label"></span>
                                 </button>
                                 <div class="popup__radio-input-wrapper popup__radio-input-wrapper--insuline-type">
@@ -337,23 +363,23 @@
                                     </div>
                                     <ul class="popup__checkbox-list list">
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-empty" type="radio" required class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-empty" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
                                             <label for="popup-radio-insuline-empty" class="popup__radio-label popup__radio-label--weight">-</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-ultra-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-ultra-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
                                             <label for="popup-radio-insuline-ultra-short" class="popup__radio-label popup__radio-label--weight">Ультракороткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-short" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
                                             <label for="popup-radio-insuline-short" class="popup__radio-label popup__radio-label--weight">Короткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-middle" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-middle"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
                                             <label for="popup-radio-insuline-middle" class="popup__radio-label popup__radio-label--weight">Среднего действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-long" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-long"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
                                             <label for="popup-radio-insuline-long" class="popup__radio-label popup__radio-label--weight">Длительного действия</label>
                                         </li>
                                     </ul>

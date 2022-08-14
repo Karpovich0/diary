@@ -1,6 +1,6 @@
 .data {
     display: grid;
-    grid-template-rows: max-content 1fr;  
+    grid-template-rows: max-content 1fr;
     &__buttons-wrapper {
         padding: 8px 0;       
     }
@@ -54,6 +54,6 @@
         box-shadow: rgba(#000, 0.1) 0px 4px 13px;       
     }
     &__sections-wrapper{
-       padding-bottom: 15px;             
+       padding-bottom: 15px;                   
     }
 }

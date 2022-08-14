@@ -9,12 +9,7 @@
     transform: translateX(100vw); 
     transition: transform 0.3s ease;    
     .container{
-       
-        min-height: calc(100vh - 80px);  
-        @media(max-width:599px){
-            
-            min-height: calc(100vh - 60px); 
-        }
+        min-height: 420px; 
     } 
     &--glucose{   
         

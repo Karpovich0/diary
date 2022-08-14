@@ -30,6 +30,7 @@
         font-size: 16px;
         line-height: 19px;    
         color: rgb(17, 17, 17);
+        text-align-last: left;
     }
     &__button-add-wrapper{
         display: flex;
@@ -54,12 +55,13 @@
     }
     &__button {    
         padding: 0;    
-        display: flex;
+        display: grid;
         align-items: center;
-        justify-content: end;
+        grid-template-columns: 1fr max-content max-content;
         background-color: transparent;
         border: none;        
-        font-family: inherit;              
+        font-family: inherit;
+        width: 100%;                      
         &::after{
             margin-left: 5px;
             width: 12px;
@@ -69,6 +71,9 @@
             background-repeat: no-repeat;
             background-position: 0 0;
         }
+    }
+    &__glucose-level{
+        
     }
     &__input-data-button{     
         margin-top: 15px;   
