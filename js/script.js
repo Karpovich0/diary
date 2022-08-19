@@ -137,3 +137,84 @@ function removeCurrentSection(){
         document.querySelector(".data__button-item--current").classList.remove("data__button-item--current");
     }    
 }
+
+// Algorithm of generation id from JSON response
+
+// let responseFromServer = {
+//     "user": [
+//         {
+//             "id": 1,
+        
+//             "user_id": "test",
+        
+//             "date": "2022-08-15 18:58:10.656835",
+        
+//             "weight": 77,
+        
+//             "comment": "heh"
+        
+//           },
+//          {
+        
+//             "id": 1,
+        
+//             "user_id": "test",
+        
+//             "date": "2022-08-15 18:55:54.008929",
+        
+//             "glucose_level": 1.2,
+        
+//             "insulin_injection": 2.2,
+        
+//             "measure_type": "test",
+        
+//             "insulin_type": "test",
+        
+//             "comment": "test"
+        
+//           },    
+//          {
+        
+//             "id": 1,
+        
+//             "user_id": "test",
+        
+//             "date": "2022-08-15 18:57:51.709122",
+        
+//             "meal_type": "Eda",
+        
+//             "meal_title": "Arbuz",
+        
+//             "meal_id": "1",
+        
+//             "gram": 5000,
+        
+//             "meal_plan": 3000,
+        
+//             "meal_fact": 2000
+        
+//           }
+//     ]
+//   }
+
+//example
+//we are setting id for first button
+// id creating by next logic = we take reponse.date and delete all spaces
+// contentSectionButtonArray[0].setAttribute("id",responseFromServer.user[0].date.replace(/\s+/g, ''));
+// //we are setting id for first details - its for example how its works
+// detailsArray[0].setAttribute("id",responseFromServer.user[0].date.replace(/\s+/g, ''));
+
+// //on click on button we are searching in response for the same value as id. When it was found - yep!
+
+// contentSectionButtonArray[0].addEventListener("click",function(){
+//     // we need here forEach because n our example we have the dates that places in three objects
+//     responseFromServer.user.forEach(item=>{
+//         if(item.date.replace(/\s+/g, '') === contentSectionButtonArray[0].id){
+//         console.log("yep");
+//         detailsArray[0].classList.add("details--current");
+//     }
+//     })
+// })
+
+// u need to delete old function on 36-45 lines that I commented
+

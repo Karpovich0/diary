@@ -323,7 +323,7 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #111111;
-  text-align-last: left;
+  text-align: left;
 }
 
 .content-section__button-add-wrapper {
@@ -430,6 +430,7 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #111111;
+  text-align: left;
 }
 
 .list__content {
