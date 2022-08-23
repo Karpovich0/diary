@@ -1,4 +1,18 @@
-
+.custom-range{
+  position: relative;
+  &__value{
+    position: absolute;
+    bottom: -30px;
+    color: #989898;
+    font-size: 14px;
+  }
+  &__value--min{
+    left: 0;
+  }
+  &__value--max{
+    right: 0;
+  }
+}
 .slider{
     margin: 25px 0;
     height: 5px;

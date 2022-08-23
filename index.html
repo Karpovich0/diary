@@ -438,16 +438,16 @@
             <header class="popup-header">
                 <h2 class="popup__dish-title">Завтрак</h2>
                 <p class="popup__dish-all-kcal">
-                    <span class="popup__dish-kcal-current">450</span> ккал. / <span class="popup__dish-kcal-max">850</span> ккал.
+                    <span class="popup__dish-kcal-current">0</span> ккал. / <span class="popup__dish-kcal-max">850</span> ккал.
                 </p>
                 <div class="popup__dish-progress-bar">
                     <span class="popup__dish-progress-span"></span>
                 </div>
                 <ul class="popup__dish-list">
-                    <li class="popup__dish-item">Белки <span class="popup__dish-protein-number">20,8</span> гр</li>
-                    <li class="popup__dish-item">Жиры <span class="popup__dish-lipid-number">34,6</span> гр</li>
-                    <li class="popup__dish-item">Углеводы <span class="popup__dish-carb-number">13,8</span> гр</li>
-                    <li class="popup__dish-item">Хлеб. ед. <span class="popup__dish-bread-number">0,9</span> ХЕ.</li>
+                    <li class="popup__dish-item">Белки <span class="popup__dish-protein-number">0</span> гр</li>
+                    <li class="popup__dish-item">Жиры <span class="popup__dish-lipid-number">0</span> гр</li>
+                    <li class="popup__dish-item">Углеводы <span class="popup__dish-carb-number">0</span> гр</li>
+                    <li class="popup__dish-item">Хлеб. ед. <span class="popup__dish-bread-number">0</span> ХЕ.</li>
                 </ul>
             </header>
             <div class="popup__body">
@@ -479,8 +479,40 @@
                                 <div class="slider">
                                     <div class="custom-range__thumb"><span></span></div>
                                     <div class="custom-range__progress-bar"></div>
-                                    <input type="range" class="popup__dish-range" min="0" oninput="updateTextInput(this.value)" name="calculator-kcal-range" value="0">
+                                    <input type="range" class="popup__dish-range" min="0" oninput="updateTextInput(this)" name="calculator-kcal-range" value="0">
                                 </div>
+                                <div class="custom-range__value custom-range__value--min">0</div>
+                                <div class="custom-range__value custom-range__value--max">1</div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="popup__dish-fieldset">
+                            <legend class="popup__dish-legend">Овощная запеканка
+                                <button type="button" class="popup__dish-reset-button">
+                                    <span class="visually-hidden">Стереть данные</span>
+                                </button>
+                            </legend>
+                            <ul class="popup__dish-list-input">
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--kcal" placeholder="0" onchange="changeTextInput(this)" step="0.1" name="calculator-kcal2">
+                                    <span class="popup__dish-description-span">ккал.</span>
+                                </li>
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--weight" placeholder="0" onchange="changeTextInput(this)"  step="0.1" name="calculator-weight2">
+                                    <span class="popup__dish-description-span">гр.</span>
+                                </li>
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--xe" placeholder="0" onchange="changeTextInput(this)" step="0.1" name="calculator-xe2">
+                                    <span class="popup__dish-description-span">ХЕ.</span>
+                                </li>
+                            </ul>
+                            <div class="popup__dish-range-wrapper custom-range">
+                                <div class="slider">
+                                    <div class="custom-range__thumb"><span></span></div>
+                                    <div class="custom-range__progress-bar"></div>
+                                    <input type="range" class="popup__dish-range" min="0" oninput="updateTextInput(this)" name="calculator-kcal-range2" value="0">
+                                </div>
+                                <div class="custom-range__value custom-range__value--min">0</div>
+                                <div class="custom-range__value custom-range__value--max">1</div>
                             </div>
                         </fieldset>
                     </div>  

@@ -272,12 +272,11 @@
     &__dish-progress-span{
         display: block;
         height: 100%;
-        width: 50%;
+        width: 0%;
         background-color: $green;
         border-radius: 2px;
     }
 	&__dish-list {
-        margin-bottom: 16px;
         display: flex;
         justify-content: space-between;
         column-gap: 10px;

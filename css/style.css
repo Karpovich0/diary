@@ -896,14 +896,13 @@ body {
 .popup__dish-progress-span {
   display: block;
   height: 100%;
-  width: 50%;
+  width: 0%;
   background-color: #007e7e;
   -webkit-border-radius: 2px;
           border-radius: 2px;
 }
 
 .popup__dish-list {
-  margin-bottom: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1085,6 +1084,25 @@ body {
           border-top-left-radius: 12px;
   -webkit-border-top-right-radius: 12px;
           border-top-right-radius: 12px;
+}
+
+.custom-range {
+  position: relative;
+}
+
+.custom-range__value {
+  position: absolute;
+  bottom: -30px;
+  color: #989898;
+  font-size: 14px;
+}
+
+.custom-range__value--min {
+  left: 0;
+}
+
+.custom-range__value--max {
+  right: 0;
 }
 
 .slider {
