@@ -432,20 +432,73 @@
             </div>
         </section>
     </div>
-
-    <div class="popup-wrapper popup-wrapper--visible">
-        <section class="popup">  
+    <!-- CALCULATOR -->
+    <div class="popup-wrapper popup-wrapper--calculator">
+        <section class="popup popup--calculator">
+            <header class="popup-header">
+                <h2 class="popup__dish-title">Завтрак</h2>
+                <p class="popup__dish-all-kcal">
+                    <span class="popup__dish-kcal-current">450</span> ккал. / <span class="popup__dish-kcal-max">850</span> ккал.
+                </p>
+                <div class="popup__dish-progress-bar">
+                    <span class="popup__dish-progress-span"></span>
+                </div>
+                <ul class="popup__dish-list">
+                    <li class="popup__dish-item">Белки <span class="popup__dish-protein-number">20,8</span> гр</li>
+                    <li class="popup__dish-item">Жиры <span class="popup__dish-lipid-number">34,6</span> гр</li>
+                    <li class="popup__dish-item">Углеводы <span class="popup__dish-carb-number">13,8</span> гр</li>
+                    <li class="popup__dish-item">Хлеб. ед. <span class="popup__dish-bread-number">0,9</span> ХЕ.</li>
+                </ul>
+            </header>
             <div class="popup__body">
-                <form action="" class="popup__form">      
-                    <div class="popup__header">
-                        <button type="reset" class="popup__button-reset-close"></button>
-                        <h2 class="popup__title">Добавить запись (глюкоза)</h2>
-                        <button type="submit" class="popup__button-submit-open"></button>
+                <form action="" class="popup__form">
+                    <div class="popup__form-inner">
+                    <div class="popup__dish-fieldset-wrapper">    
+                        <fieldset class="popup__dish-fieldset">
+                            <legend class="popup__dish-legend">Рагу из курицы с зеленой фасолью
+                                и вкусными специями
+                                <button type="button" class="popup__dish-reset-button">
+                                    <span class="visually-hidden">Стереть данные</span>
+                                </button>
+                            </legend>
+                            <ul class="popup__dish-list-input">
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--kcal" placeholder="0" onchange="changeTextInput(this)" step="0.1" name="calculator-kcal">
+                                    <span class="popup__dish-description-span">ккал.</span>
+                                </li>
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--weight" placeholder="0" onchange="changeTextInput(this)"  step="0.1" name="calculator-weight">
+                                    <span class="popup__dish-description-span">гр.</span>
+                                </li>
+                                <li class="popup__dish-item-input">
+                                    <input type="number" class="popup__dish-input popup__dish-input--xe" placeholder="0" onchange="changeTextInput(this)" step="0.1" name="calculator-xe">
+                                    <span class="popup__dish-description-span">ХЕ.</span>
+                                </li>
+                            </ul>
+                            <div class="popup__dish-range-wrapper custom-range">
+                                <div class="slider">
+                                    <div class="custom-range__thumb"><span></span></div>
+                                    <div class="custom-range__progress-bar"></div>
+                                    <input type="range" class="popup__dish-range" min="0" oninput="updateTextInput(this.value)" name="calculator-kcal-range" value="0">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>  
+                    <!-- hidden inputs -->
+                    <input type="number" step="0.1" class="visually-hidden popup__protein-hidden" name="calculator-protein">
+                    <input type="number" step="0.1" class="visually-hidden popup__lipid-hidden" name="calculator-lipid">
+                    <input type="number" step="0.1" class="visually-hidden popup__carb-hidden" name="calculator-carb">
+
+                    <div class="popup__dish-button-wrapper">
+                        <button type="submit" class="popup__dish-button-submit">Съесть <span class="popup__dish-finish-kcal">800</span> ккал. <span class="popup__dish-finish-weight">240</span> гр.
+                        </button>
                     </div>
+                </div>
                 </form>
             </div>
         </section>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/calculator.js"></script>
 </body>
 </html>

@@ -218,3 +218,4 @@ function removeCurrentSection(){
 
 // u need to delete old function on 36-45 lines that I commented
 
+
