@@ -59,7 +59,7 @@ let calculatorData = [{
     }
 ]
 
-generateId();
+generateData();
 let calculatorAllDishMaxKcal = getMaxKcal();
 
 let calculatorAllCurrentKcal = new Array(calculatorData.length);
@@ -78,51 +78,51 @@ calculatorResetButtonArray.forEach((item, index)=>item.addEventListener("click",
 
 
 function updateTextInput(input) {
-    let inputId; 
+    let inputData; 
 
     if(isNaN(input)){
-        inputId = Number(input.id)-1;
+        inputData = Number(input.dataset.dishNumber)-1;
     }else{
-        inputId = input;
+        inputData = input;
     };
     
-    let kcal = calculatorRangeValueArray[inputId].value;    
+    let kcal = calculatorRangeValueArray[inputData].value;    
 
-    customRangeThumbArray[inputId].style.left = ((kcal/calculatorData[inputId].MaxKcal)*100)+"%";
-    customRangeBarArray[inputId].style.width = ((kcal/calculatorData[inputId].MaxKcal)*100)+"%";
+    customRangeThumbArray[inputData].style.left = ((kcal/calculatorData[inputData].MaxKcal)*100)+"%";
+    customRangeBarArray[inputData].style.width = ((kcal/calculatorData[inputData].MaxKcal)*100)+"%";
 
-    calculatorInputKcalArray[inputId].value = kcal;
+    calculatorInputKcalArray[inputData].value = kcal;
     // write kcal on submit button
-    let currentAllKcal = calculateCurerntAll(calculatorAllCurrentKcal, kcal, inputId);
+    let currentAllKcal = calculateCurerntAll(calculatorAllCurrentKcal, kcal, inputData);
     calculatorFinalKcalSpan.innerHTML = currentAllKcal;
-    let weight = calculateWeight(calculatorRangeValueArray[inputId].value, inputId);
+    let weight = calculateWeight(calculatorRangeValueArray[inputData].value, inputData);
     
      // write weight on submit button
-    let currentAllWeight =  (calculateCurerntAll(calculatorAllCurrentWeight, weight, inputId)).toFixed(1);
+    let currentAllWeight =  (calculateCurerntAll(calculatorAllCurrentWeight, weight, inputData)).toFixed(1);
     calculatorFinalWeightSpan.innerHTML = currentAllWeight;    
-    calculatorInputWeightArray[inputId].value = weight;    
+    calculatorInputWeightArray[inputData].value = weight;    
 
-    let calculatorProtein = ((weight/100)*calculatorData[inputId].Protein).toFixed(1);
-    let calculatorLipid = ((weight/100)*calculatorData[inputId].Lipid).toFixed(1);
-    let calculatorCarb = ((weight/100)*calculatorData[inputId].Carb).toFixed(1);
+    let calculatorProtein = ((weight/100)*calculatorData[inputData].Protein).toFixed(1);
+    let calculatorLipid = ((weight/100)*calculatorData[inputData].Lipid).toFixed(1);
+    let calculatorCarb = ((weight/100)*calculatorData[inputData].Carb).toFixed(1);
 
     //fill protein carb and lipid
-    calculatorProteinNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentProtein, calculatorProtein, inputId)).toFixed(1);
-    calculatorProteinHidden.value = calculateCurerntAll(calculatorAllCurrentProtein, calculatorProtein, inputId);
+    calculatorProteinNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentProtein, calculatorProtein, inputData)).toFixed(1);
+    calculatorProteinHidden.value = calculateCurerntAll(calculatorAllCurrentProtein, calculatorProtein, inputData);
 
-    calculatorLipidNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentLipid, calculatorLipid, inputId)).toFixed(1);
-    calculatorLipidHidden.value = (calculateCurerntAll(calculatorAllCurrentLipid, calculatorLipid, inputId)).toFixed(1);
+    calculatorLipidNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentLipid, calculatorLipid, inputData)).toFixed(1);
+    calculatorLipidHidden.value = (calculateCurerntAll(calculatorAllCurrentLipid, calculatorLipid, inputData)).toFixed(1);
 
-    calculatorCarbNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentCarb, calculatorCarb, inputId)).toFixed(1);
-    calculatorCarbHidden.value = (calculateCurerntAll(calculatorAllCurrentCarb, calculatorCarb, inputId)).toFixed(1);
+    calculatorCarbNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentCarb, calculatorCarb, inputData)).toFixed(1);
+    calculatorCarbHidden.value = (calculateCurerntAll(calculatorAllCurrentCarb, calculatorCarb, inputData)).toFixed(1);
 
     //fill top bar
     caclculatorTopBarCurrent.innerHTML = currentAllKcal;
     caclculatorTopBarProgress.style.width = ((currentAllKcal/calculatorAllDishMaxKcal)*100)+"%";
 
-    let xeNumber = calculateXe(weight, inputId);
-    calculatorInputXeArray[inputId].value = xeNumber;    
-    calculatorBreadNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentXe, xeNumber, inputId)).toFixed(1);
+    let xeNumber = calculateXe(weight, inputData);
+    calculatorInputXeArray[inputData].value = xeNumber;    
+    calculatorBreadNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentXe, xeNumber, inputData)).toFixed(1);
 }
 
 function changeTextInput(element) {
@@ -166,13 +166,13 @@ function resetInputs(index){
     updateTextInput(index);
 }
 
-function generateId(){
+function generateData(){
     calculatorFieldsetArray.forEach((item,index)=>{
-        item.setAttribute("id", calculatorData[index].id);
-        calculatorRangeValueArray[index].setAttribute("id", calculatorData[index].id);
-        calculatorInputKcalArray[index].setAttribute("id", calculatorData[index].id);
-        calculatorInputWeightArray[index].setAttribute("id", calculatorData[index].id);
-        return calculatorInputXeArray[index].setAttribute("id", calculatorData[index].id);
+        item.setAttribute("data-dish-number", calculatorData[index].id);
+        calculatorRangeValueArray[index].setAttribute("data-dish-number", calculatorData[index].id);
+        calculatorInputKcalArray[index].setAttribute("data-dish-number", calculatorData[index].id);
+        calculatorInputWeightArray[index].setAttribute("data-dish-number", calculatorData[index].id);
+        return calculatorInputXeArray[index].setAttribute("data-dish-number", calculatorData[index].id);
     })
 }
 
