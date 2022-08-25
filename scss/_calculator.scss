@@ -1,0 +1,183 @@
+.calculator-wrapper{
+      height: 100%;
+      min-height: 465px;
+}
+.calculator { 
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: max-content 1fr;      
+      padding: 0;       
+      height: 100%;
+      &__header-wrapper{
+            background-color: #EDEDED;
+      }
+      &__header {
+            margin: 0 auto;
+            padding: 16px 22px;
+            max-width: 768px;  
+      }
+            
+&__form-inner{
+      height: 100%;
+}
+&__dish-title {
+      margin-bottom: 10px;
+}
+&__dish-all-kcal {
+      margin-bottom: 7px;
+      font-weight: 700;
+      font-size: 16px;
+}
+&__dish-kcal-current {
+}
+&__dish-kcal-max {
+}
+&__dish-progress-bar {
+      margin-bottom: 12px;
+      width: 100%;
+      height: 4px;
+      background-color: #D9D9D9;
+      border-radius: 2px;
+}
+  &__dish-progress-span{
+      display: block;
+      height: 100%;
+      width: 0%;
+      background-color: $green;
+      border-radius: 2px;
+  }
+&__dish-list {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 10px;
+}
+&__dish-item {
+      position: relative;
+      font-size: 12px;
+      padding-left: 11px;
+      &::before{
+          position: absolute;
+          left: 0;
+          top: 0;            
+          flex-shrink: 0;
+          margin-top: 2px;
+          margin-right: 3px;
+          content: "";
+          width:7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #AC6969;            
+      }
+}
+&__body {
+     
+}
+&__form{       
+      height: 100%;   
+}
+&__form-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+}
+&__dish-fieldset-wrapper{
+      margin: 0 auto;      
+      max-width: 768px;  
+      padding: 16px 22px;
+}
+&__dish-fieldset {
+      margin-bottom: 25px;
+      padding: 0;
+      border: 0;
+}
+&__dish-legend {
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-column-gap: 10px;
+}
+&__dish-reset-button {
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23b3b3b3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillrule='evenodd' cliprule='evenodd' d='M5.98949 4.57537C5.79423 4.38011 5.47765 4.38011 5.28239 4.57537L4.57528 5.28248C4.38002 5.47774 4.38002 5.79432 4.57528 5.98958L10.5857 12L4.57539 18.0104C4.38012 18.2057 4.38012 18.5222 4.57539 18.7175L5.28249 19.4246C5.47775 19.6199 5.79434 19.6199 5.9896 19.4246L12 13.4143L18.0103 19.4246C18.2056 19.6199 18.5222 19.6199 18.7174 19.4246L19.4245 18.7175C19.6198 18.5222 19.6198 18.2057 19.4245 18.0104L13.4142 12L19.4246 5.98958C19.6199 5.79432 19.6199 5.47774 19.4246 5.28248L18.7175 4.57537C18.5223 4.38011 18.2057 4.38011 18.0104 4.57537L12 10.5858L5.98949 4.57537Z'%3E%3C/path%3E%3C/svg%3E");
+      border: none;
+      background-repeat: no-repeat;
+      }
+      &__dish-list-input {
+            margin-bottom: 10px;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+      }
+      &__dish-item-input {
+            position: relative;
+            &:first-child .calculator__dish-input{
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+            &:nth-child(2) .calculator__dish-input{
+              border-left: 0;
+              border-right: 0;
+            }
+            &:last-child .calculator__dish-input{
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+            }
+      }
+      &__dish-input {
+            padding: 7px 40px 7px 10px;
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid rgba($color: #000000, $alpha: 0.2);
+            font-family: inherit;
+            outline-color: $green;
+            text-align: center;
+            &::placeholder{
+                color: #000000;
+                font-family: inherit;
+                text-align: center;
+            }
+      }
+      &__dish-description-span{
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            color: #A9A9A9;
+            font-size: 14px;
+            transform: translateY(-50%);
+      }
+      &__dish-range {
+
+            &:focus{
+                outline: none;
+            }
+      }
+      &__dish-button-wrapper{
+            background-color: #EDEDED;
+            padding: 16px 22px;
+      }
+      &__dish-button-submit {
+            margin: 0 auto;      
+            max-width: 768px;
+            display: block;
+            background-color: $green;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+      }
+      &__dish-finish-kcal {
+      }
+      &__dish-finish-weight {
+      }
+}
+
+
+
+

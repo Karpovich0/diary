@@ -1,34 +1,36 @@
 //CALCULATOR
 //top progress bar
-const caclculatorTopBarCurrent = document.querySelector(".popup__dish-kcal-current");
-const caclculatorTopBarMax = document.querySelector(".popup__dish-kcal-max");
-const caclculatorTopBarProgress = document.querySelector(".popup__dish-progress-span");
+const caclculatorTopBarCurrent = document.querySelector(".calculator__dish-kcal-current");
+const caclculatorTopBarMax = document.querySelector(".calculator__dish-kcal-max");
+const caclculatorTopBarProgress = document.querySelector(".calculator__dish-progress-span");
 //inputs
-const calculatorRangeValueArray = document.querySelectorAll(".popup__dish-range");
-const calculatorInputKcalArray = document.querySelectorAll(".popup__dish-input--kcal");
-const calculatorInputWeightArray = document.querySelectorAll(".popup__dish-input--weight");
-const calculatorInputXeArray = document.querySelectorAll(".popup__dish-input--xe");
+const calculatorRangeValueArray = document.querySelectorAll(".calculator__dish-range");
+const calculatorInputKcalArray = document.querySelectorAll(".calculator__dish-input--kcal");
+const calculatorInputWeightArray = document.querySelectorAll(".calculator__dish-input--weight");
+const calculatorInputXeArray = document.querySelectorAll(".calculator__dish-input--xe");
 //submit button
-const calculatorFinalKcalSpan = document.querySelector(".popup__dish-finish-kcal");
-const calculatorFinalWeightSpan = document.querySelector(".popup__dish-finish-weight");
+const calculatorFinalKcalSpan = document.querySelector(".calculator__dish-finish-kcal");
+const calculatorFinalWeightSpan = document.querySelector(".calculator__dish-finish-weight");
 //custom input range
 const customRangeBarArray = document.querySelectorAll(".custom-range__progress-bar");
 const customRangeThumbArray = document.querySelectorAll(".custom-range__thumb");
 // reset button
-const calculatorResetButtonArray = document.querySelectorAll(".popup__dish-reset-button");
+const calculatorResetButtonArray = document.querySelectorAll(".calculator__dish-reset-button");
 // show protein lipid and carb
-const calculatorProteinNumber = document.querySelector(".popup__dish-protein-number");
-const calculatorLipidNumber = document.querySelector(".popup__dish-lipid-number");
-const calculatorCarbNumber = document.querySelector(".popup__dish-carb-number");
-const calculatorBreadNumber = document.querySelector(".popup__dish-bread-number");
+const calculatorProteinNumber = document.querySelector(".calculator__dish-protein-number");
+const calculatorLipidNumber = document.querySelector(".calculator__dish-lipid-number");
+const calculatorCarbNumber = document.querySelector(".calculator__dish-carb-number");
+const calculatorBreadNumber = document.querySelector(".calculator__dish-bread-number");
 // hidden inputs
-const calculatorProteinHidden = document.querySelector(".popup__protein-hidden");
-const calculatorLipidHidden = document.querySelector(".popup__lipid-hidden");
-const calculatorCarbHidden = document.querySelector(".popup__carb-hidden");
+const calculatorProteinHidden = document.querySelector(".calculator__protein-hidden");
+const calculatorLipidHidden = document.querySelector(".calculator__lipid-hidden");
+const calculatorCarbHidden = document.querySelector(".calculator__carb-hidden");
 // show max kcal
 const calculatorMaxRangeValue = document.querySelectorAll(".custom-range__value--max");
 // MULTY DISH
-const calculatorFieldsetArray = document.querySelectorAll(".popup__dish-fieldset");
+const calculatorFieldsetArray = document.querySelectorAll(".calculator__dish-fieldset");
+// submit button
+const calculatorSubmitButton = document.querySelector(".calculator__dish-button-submit");
 
 
 let calculatorData = [{
@@ -38,7 +40,7 @@ let calculatorData = [{
     "Lipid": "10",
     "Carb": "4",
     "Kcal": "130",
-    "MaxKcal": "450",
+    "MaxKcal": "850",
     "MealType": "Завтрак",
     "MealTitle": "Овощная запеканка",
     "Gram": "",
@@ -51,7 +53,7 @@ let calculatorData = [{
     "Lipid": "20",
     "Carb": "14",
     "Kcal": "180",
-    "MaxKcal": "469",
+    "MaxKcal": "850",
     "MealType": "Завтрак",
     "MealTitle": "Овощная запеканка",
     "Gram": "",
@@ -60,7 +62,10 @@ let calculatorData = [{
 ]
 
 generateData();
-let calculatorAllDishMaxKcal = getMaxKcal();
+let calculatorMaxOfKcal = calculatorData[0].MaxKcal;
+let calculatorRestKcal = calculatorMaxOfKcal;
+
+let calculatorAllUsedKcal = new Array(calculatorData.length);
 
 let calculatorAllCurrentKcal = new Array(calculatorData.length);
 let calculatorAllCurrentWeight = new Array(calculatorData.length);
@@ -70,24 +75,39 @@ let calculatorAllCurrentLipid = new Array(calculatorData.length);
 let calculatorAllCurrentCarb = new Array(calculatorData.length);
 let calculatorAllCurrentXe = new Array(calculatorData.length);
 
-caclculatorTopBarMax.innerHTML = calculatorAllDishMaxKcal;
-setAllKcal();
+caclculatorTopBarMax.innerHTML = calculatorMaxOfKcal;
+// caclculatorTopBarMax.innerHTML = calculatorAllDishMaxKcal;
+calculatorSetMaxKcal()
+setAllKcal(0,0);
 calculatorResetButtonArray.forEach((item, index)=>item.addEventListener("click", function(){
     resetInputs(index);
-}))
+}));
 
+calculatorAddEventListener(calculatorInputKcalArray);
+calculatorAddEventListener(calculatorInputWeightArray);
+calculatorAddEventListener(calculatorInputXeArray);
+
+calculatorSubmitButton.addEventListener("click", function(event){
+    if(calculatorRestKcal == calculatorMaxOfKcal){
+        event.preventDefault();
+    }
+});
 
 function updateTextInput(input) {
     let inputData; 
 
     if(isNaN(input)){
-        inputData = Number(input.dataset.dishNumber)-1;
+        inputData = Number(input.dataset.dishNumber);
     }else{
         inputData = input;
     };
+    if(calculatorRangeValueArray[inputData].value===0.001){
+       calculatorRangeValueArray[inputData].value = 0;
+    }
+    let kcalBuffer = calculatorRangeValueArray[inputData].value;
+    let kcal = checkInput(kcalBuffer, inputData);
+    setAllKcal(kcal, inputData);    
     
-    let kcal = calculatorRangeValueArray[inputData].value;    
-
     customRangeThumbArray[inputData].style.left = ((kcal/calculatorData[inputData].MaxKcal)*100)+"%";
     customRangeBarArray[inputData].style.width = ((kcal/calculatorData[inputData].MaxKcal)*100)+"%";
 
@@ -95,10 +115,12 @@ function updateTextInput(input) {
     // write kcal on submit button
     let currentAllKcal = calculateCurerntAll(calculatorAllCurrentKcal, kcal, inputData);
     calculatorFinalKcalSpan.innerHTML = currentAllKcal;
-    let weight = calculateWeight(calculatorRangeValueArray[inputData].value, inputData);
+
+    let weight = calculateWeight(kcal, inputData);
     
      // write weight on submit button
-    let currentAllWeight =  (calculateCurerntAll(calculatorAllCurrentWeight, weight, inputData)).toFixed(1);
+    let currentAllWeight = Math.round(calculateCurerntAll(calculatorAllCurrentWeight, weight, inputData));
+    
     calculatorFinalWeightSpan.innerHTML = currentAllWeight;    
     calculatorInputWeightArray[inputData].value = weight;    
 
@@ -118,31 +140,35 @@ function updateTextInput(input) {
 
     //fill top bar
     caclculatorTopBarCurrent.innerHTML = currentAllKcal;
-    caclculatorTopBarProgress.style.width = ((currentAllKcal/calculatorAllDishMaxKcal)*100)+"%";
+    caclculatorTopBarProgress.style.width = ((currentAllKcal/calculatorMaxOfKcal)*100)+"%";
 
     let xeNumber = calculateXe(weight, inputData);
     calculatorInputXeArray[inputData].value = xeNumber;    
-    calculatorBreadNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentXe, xeNumber, inputData)).toFixed(1);
+    calculatorBreadNumber.innerHTML = (calculateCurerntAll(calculatorAllCurrentXe, xeNumber, inputData)).toFixed(1);   
 }
 
 function changeTextInput(element) {
-    let elementId = Number(element.id)-1;
+    let elementData = Number(element.dataset.dishNumber);
     let elementClassArray = element.className.split(" ");
     let elementValue = element.value;
     switch (elementClassArray[1]) {
-        case "popup__dish-input--weight":
-            elementValue = calculateKcalByWeight(elementValue, elementId);
+        case "calculator__dish-input--weight":
+            elementValue = calculateKcalByWeight(elementValue, elementData);
             break;
-        case "popup__dish-input--xe":
-            elementValue = calculateKcalByXe(elementValue, elementId);
+        case "calculator__dish-input--xe":
+            elementValue = calculateKcalByXe(elementValue, elementData);
             break;
     }
-    calculatorRangeValueArray[elementId].value = elementValue;
-    updateTextInput(elementId);
+    if(Number(elementValue)===0){
+        calculatorRangeValueArray[elementData].value = elementValue+0.001; //if range value will be 0 it will jump to 50% of max value of kcal - to avoid this bug I used this condition. To check just comment this if-else and try to set 0 value for kcal input
+    }else{
+        calculatorRangeValueArray[elementData].value = elementValue;
+    }
+    updateTextInput(elementData);
 }
 
 function calculateWeight(weight, index){
-    return ((weight/calculatorData[index].Kcal)*100).toFixed(1);
+    return Math.round((weight/calculatorData[index].Kcal)*100);
 }
 
 function calculateXe(weight, index){
@@ -150,11 +176,11 @@ function calculateXe(weight, index){
 }
 
 function calculateKcalByWeight(weight, index){
-    return ((weight*calculatorData[index].Kcal)/100).toFixed(1);
+    return Math.round((weight*calculatorData[index].Kcal)/100);
 }
 
 function calculateKcalByXe(xe, index){
-    let weight = ((1500*xe)/calculatorData[index].Carb).toFixed(1);
+    let weight =  (1500*xe)/calculatorData[index].Carb;
     return calculateKcalByWeight(weight, index);
 }
 
@@ -168,23 +194,21 @@ function resetInputs(index){
 
 function generateData(){
     calculatorFieldsetArray.forEach((item,index)=>{
-        item.setAttribute("data-dish-number", calculatorData[index].id);
-        calculatorRangeValueArray[index].setAttribute("data-dish-number", calculatorData[index].id);
-        calculatorInputKcalArray[index].setAttribute("data-dish-number", calculatorData[index].id);
-        calculatorInputWeightArray[index].setAttribute("data-dish-number", calculatorData[index].id);
-        return calculatorInputXeArray[index].setAttribute("data-dish-number", calculatorData[index].id);
+        item.setAttribute("data-dish-number", index);
+        calculatorRangeValueArray[index].setAttribute("data-dish-number", index);
+        calculatorInputKcalArray[index].setAttribute("data-dish-number", index);
+        calculatorInputWeightArray[index].setAttribute("data-dish-number", index);
+        return calculatorInputXeArray[index].setAttribute("data-dish-number", index);
     })
 }
 
-function getMaxKcal(){
-     return calculatorData.reduce(function(sum, current) {
-        return sum + Number(current.MaxKcal);
-    }, 0);
-}
-function setAllKcal(){
+function setAllKcal(value, index){
+    let sum = calculatorKcalSum(value, index);
+
+    calculatorRestKcal = calculatorMaxOfKcal - sum;
+
     calculatorMaxRangeValue.forEach((item,index)=>{
-        item.innerHTML = calculatorData[index].MaxKcal;
-        return calculatorRangeValueArray[index].setAttribute("max",calculatorData[index].MaxKcal);
+        item.innerHTML = calculatorRestKcal;
     });
 }
 
@@ -193,4 +217,36 @@ function calculateCurerntAll(array, value, index){
     return array.reduce(function(sum, current) {
         return sum + Number(current);
     }, 0);
+};
+
+function calculatorAddEventListener(array){
+    array.forEach((item)=>item.addEventListener("input",function(e){changeTextInput(e.target)}));
 }
+
+function checkInput(value, index){       
+    let sum = calculatorKcalSum(value, index);
+    
+    if((sum - calculatorMaxOfKcal) > 0){
+       sum = sum - calculatorAllUsedKcal[index];
+       return calculatorMaxOfKcal - sum;
+    }else{
+        return value;
+    }
+}
+
+function calculatorSetMaxKcal(){
+    calculatorMaxRangeValue.forEach((item,index)=>calculatorRangeValueArray[index].setAttribute("max", calculatorMaxOfKcal)
+    );
+}
+
+function calculatorKcalSum(value, index) {
+    calculatorAllUsedKcal[index] = value;
+
+    return calculatorAllUsedKcal.reduce(function(sum, current) {
+        return sum + Number(current);
+    }, 0);
+}
+
+
+
+

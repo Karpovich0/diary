@@ -1,8 +1,13 @@
+html {
+  height: 100%;
+}
+
 body {
   position: relative;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  min-height: 100vh;
   height: 100%;
   background-color: #f6f6f6;
 }
@@ -10,7 +15,6 @@ body {
 .main {
   padding-top: 56px;
   background-color: #f6f6f6;
-  height: 100vh;
 }
 
 @media (min-width: 600px) {
@@ -567,10 +571,6 @@ body {
   display: block;
 }
 
-.popup-wrapper--calculator {
-  display: block;
-}
-
 .popup {
   padding: 16px;
   position: absolute;
@@ -862,29 +862,47 @@ body {
   position: relative;
 }
 
-.popup--calculator {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
-  padding: 0;
+.calculator-wrapper {
+  height: 100%;
+  min-height: 465px;
 }
 
-.popup__form-inner {
+.calculator {
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content 1fr;
+      grid-template-rows: -webkit-max-content 1fr;
+      grid-template-rows: max-content 1fr;
+  padding: 0;
   height: 100%;
 }
 
-.popup__dish-title {
+.calculator__header-wrapper {
+  background-color: #EDEDED;
+}
+
+.calculator__header {
+  margin: 0 auto;
+  padding: 16px 22px;
+  max-width: 768px;
+}
+
+.calculator__form-inner {
+  height: 100%;
+}
+
+.calculator__dish-title {
   margin-bottom: 10px;
 }
 
-.popup__dish-all-kcal {
+.calculator__dish-all-kcal {
   margin-bottom: 7px;
   font-weight: 700;
   font-size: 16px;
 }
 
-.popup__dish-progress-bar {
+.calculator__dish-progress-bar {
   margin-bottom: 12px;
   width: 100%;
   height: 4px;
@@ -893,7 +911,7 @@ body {
           border-radius: 2px;
 }
 
-.popup__dish-progress-span {
+.calculator__dish-progress-span {
   display: block;
   height: 100%;
   width: 0%;
@@ -902,7 +920,7 @@ body {
           border-radius: 2px;
 }
 
-.popup__dish-list {
+.calculator__dish-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -916,13 +934,13 @@ body {
           column-gap: 10px;
 }
 
-.popup__dish-item {
+.calculator__dish-item {
   position: relative;
   font-size: 12px;
   padding-left: 11px;
 }
 
-.popup__dish-item::before {
+.calculator__dish-item::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -939,28 +957,39 @@ body {
   background-color: #AC6969;
 }
 
-.popup__form {
+.calculator__form {
   height: 100%;
 }
 
-.popup__form-inner {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr auto;
-      grid-template-rows: 1fr auto;
+.calculator__form-inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.popup__dish-fieldset-wrapper {
+.calculator__dish-fieldset-wrapper {
+  margin: 0 auto;
+  max-width: 768px;
   padding: 16px 22px;
 }
 
-.popup__dish-fieldset {
-  margin-bottom: 15px;
+.calculator__dish-fieldset {
+  margin-bottom: 25px;
   padding: 0;
   border: 0;
 }
 
-.popup__dish-legend {
+.calculator__dish-legend {
   width: 100%;
   margin-bottom: 12px;
   font-size: 17px;
@@ -972,7 +1001,7 @@ body {
   grid-column-gap: 10px;
 }
 
-.popup__dish-reset-button {
+.calculator__dish-reset-button {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -981,7 +1010,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.popup__dish-list-input {
+.calculator__dish-list-input {
   margin-bottom: 10px;
   max-width: 100%;
   display: -ms-grid;
@@ -990,59 +1019,64 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
 }
 
-.popup__dish-item-input {
+.calculator__dish-item-input {
   position: relative;
 }
 
-.popup__dish-item-input:first-child .popup__dish-input {
+.calculator__dish-item-input:first-child .calculator__dish-input {
   -webkit-border-top-left-radius: 6px;
           border-top-left-radius: 6px;
   -webkit-border-bottom-left-radius: 6px;
           border-bottom-left-radius: 6px;
 }
 
-.popup__dish-item-input:nth-child(2) .popup__dish-input {
+.calculator__dish-item-input:nth-child(2) .calculator__dish-input {
   border-left: 0;
   border-right: 0;
 }
 
-.popup__dish-item-input:last-child .popup__dish-input {
+.calculator__dish-item-input:last-child .calculator__dish-input {
   -webkit-border-top-right-radius: 6px;
           border-top-right-radius: 6px;
   -webkit-border-bottom-right-radius: 6px;
           border-bottom-right-radius: 6px;
 }
 
-.popup__dish-input {
-  padding: 7px 10px;
+.calculator__dish-input {
+  padding: 7px 40px 7px 10px;
   width: 100%;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-family: inherit;
   outline-color: #007e7e;
+  text-align: center;
 }
 
-.popup__dish-input::-webkit-input-placeholder {
+.calculator__dish-input::-webkit-input-placeholder {
   color: #000000;
   font-family: inherit;
+  text-align: center;
 }
 
-.popup__dish-input:-ms-input-placeholder {
+.calculator__dish-input:-ms-input-placeholder {
   color: #000000;
   font-family: inherit;
+  text-align: center;
 }
 
-.popup__dish-input::-ms-input-placeholder {
+.calculator__dish-input::-ms-input-placeholder {
   color: #000000;
   font-family: inherit;
+  text-align: center;
 }
 
-.popup__dish-input::placeholder {
+.calculator__dish-input::placeholder {
   color: #000000;
   font-family: inherit;
+  text-align: center;
 }
 
-.popup__dish-description-span {
+.calculator__dish-description-span {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -1054,20 +1088,19 @@ body {
           transform: translateY(-50%);
 }
 
-.popup__dish-range:focus {
+.calculator__dish-range:focus {
   outline: none;
 }
 
-.popup__dish-button-wrapper {
+.calculator__dish-button-wrapper {
   background-color: #EDEDED;
   padding: 16px 22px;
-  -webkit-border-bottom-left-radius: 12px;
-          border-bottom-left-radius: 12px;
-  -webkit-border-bottom-right-radius: 12px;
-          border-bottom-right-radius: 12px;
 }
 
-.popup__dish-button-submit {
+.calculator__dish-button-submit {
+  margin: 0 auto;
+  max-width: 768px;
+  display: block;
   background-color: #007e7e;
   width: 100%;
   padding: 18px;
@@ -1075,15 +1108,6 @@ body {
   -webkit-border-radius: 12px;
           border-radius: 12px;
   color: #ffffff;
-}
-
-.popup-header {
-  padding: 16px 22px;
-  background-color: #EDEDED;
-  -webkit-border-top-left-radius: 12px;
-          border-top-left-radius: 12px;
-  -webkit-border-top-right-radius: 12px;
-          border-top-right-radius: 12px;
 }
 
 .custom-range {
