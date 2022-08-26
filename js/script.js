@@ -22,7 +22,10 @@ const searchButtonOpen = document.querySelector(".header__search-btn--open");
 const searchButtonClose = document.querySelector(".header__search-btn--close");
 const headerSearchForm = document.querySelector(".header__search-form");
 const headerSearchResults = document.querySelector(".header__search-results");
-
+// datetime input
+const popupDatetimeArray = document.querySelectorAll(".popup__input--datetime");
+// stop reload after submit form
+const popupFormArray = document.querySelectorAll(".popup__form");
 
 //listen click on button to make section current
 for(let i = 0; i < dataButtonArray.length; i++){
@@ -50,7 +53,8 @@ for(let i = 0; i < detailsBackButtonArray.length; i++){
 }
 
 for(let i = 0; i < contentSectionButton.length; i++){
-    contentSectionButton[i].addEventListener("click", function(ent){  
+    contentSectionButton[i].addEventListener("click", function(ent){ 
+        popupDatetimeArray[i].value = generateDate();
         popupWrapperArray[i].classList.add("popup-wrapper--current");        
     })
 }
@@ -219,3 +223,43 @@ function removeCurrentSection(){
 // u need to delete old function on 36-45 lines that I commented
 
 
+// UPDATE
+function generateDate(){
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+    var today = year + "-" + month + "-" + day;
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    if (hour < 10) hour = "0" + hour;
+    if (minute < 10) minute = "0" + minute;
+
+    let time = hour + ":" + minute;   
+
+    return today+"T"+time;
+    // yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS".
+}
+
+for(let i = 0; i < popupFormArray.length; i++){
+    popupFormArray[i].addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const searchParam = new URLSearchParams(formData);  
+        console.log(searchParam);
+        // change link
+        fetch('https://httpbin.org/post', {
+            method: 'POST',
+            body: searchParam,
+        }).then(function(response){
+            return response.text();
+        }).then(function(text){
+            console.log(text);
+        });
+        // .then - for demonstration and can be deleted. Link must be changed on you website's address
+        popupButtonResetCloseArray[i].click();
+    })
+}

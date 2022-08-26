@@ -13,15 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="/css/drop-default-styles.css">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
+   
 </head>
 <body>
     <header class="header">
@@ -304,7 +296,7 @@
                         <li class="popup__item">
                             <label for="popup-datetime" class="popup__label">Дата</label>
                             <span class="popup__required">Required</span>
-                            <input id="popup-datetime" class="popup__input popup__input--datetime" type="datetime-local" required>
+                            <input id="popup-datetime" name="popup-date" class="popup__input popup__input--datetime" type="datetime-local" required>
                         </li>
                         <li class="popup__item">
                             <label for="popup-glucose-measure-type" class="popup__label">Тип измерения</label>
@@ -321,23 +313,26 @@
                                     </div>
                                     <ul class="popup__checkbox-list list">
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-before-dish" type="radio" required checked class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <input id="popup-radio-before-dish" type="radio" required checked class="popup__radio-input visually-hidden" name="popup-radio-measure-type" value="popup-radio-before-dish">
                                             <label for="popup-radio-before-dish" class="popup__radio-label popup__radio-label--glucose">Натощак перед приемом пищи</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-two-hours-after-breakfast" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <input id="popup-radio-two-hours-after-breakfast" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type" value="popup-radio-two-hours-after-breakfast">
                                             <label for="popup-radio-two-hours-after-breakfast" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после завтрака</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-two-hours-after-lunch" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <input id="popup-radio-two-hours-after-lunch" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type"
+                                            value="popup-radio-two-hours-after-lunch">
                                             <label for="popup-radio-two-hours-after-lunch" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после обеда</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-two-hours-after-dinner" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <input id="popup-radio-two-hours-after-dinner" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type"
+                                            value="popup-radio-two-hours-after-dinner">
                                             <label for="popup-radio-two-hours-after-dinner" class="popup__radio-label popup__radio-label--glucose">Через 2 часа после ужина</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-before-sleep" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type">
+                                            <input id="popup-radio-before-sleep" required type="radio" class="popup__radio-input visually-hidden" name="popup-radio-measure-type"
+                                            value="popup-radio-before-sleep">
                                             <label for="popup-radio-before-sleep" class="popup__radio-label popup__radio-label--glucose">Натощак перед сном</label>
                                         </li>
                                     </ul>
@@ -347,7 +342,7 @@
                             <label for="popup-glucose-level" class="popup__label">Уровень глюкозы</label>
                             <span class="popup__required">Required</span>
                             <span class="popup__labels-description">ммоль/л</span>
-                            <input id="popup-glucose-level" class="popup__input" type="number" step="0.1" required>
+                            <input id="popup-glucose-level" class="popup__input" name="popup-glucose-level" type="number" step="0.1" required>
                         </li>
                         <li class="popup__item">
                                 <label for="popup-insuline-type-button" class="popup__label">Тип вводимого инсулина</label>                                
@@ -363,23 +358,28 @@
                                     </div>
                                     <ul class="popup__checkbox-list list">
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-empty" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-empty" type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type"
+                                            value="popup-radio-insuline-empty">
                                             <label for="popup-radio-insuline-empty" class="popup__radio-label popup__radio-label--weight">-</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-ultra-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-ultra-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type"
+                                            value="popup-radio-insuline-ultra-short">
                                             <label for="popup-radio-insuline-ultra-short" class="popup__radio-label popup__radio-label--weight">Ультракороткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-short"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type"
+                                            value="popup-radio-insuline-short">
                                             <label for="popup-radio-insuline-short" class="popup__radio-label popup__radio-label--weight">Короткого действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-middle"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-middle"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type"
+                                            value="popup-radio-insuline-middle">
                                             <label for="popup-radio-insuline-middle" class="popup__radio-label popup__radio-label--weight">Среднего действия</label>
                                         </li>
                                         <li class="popup__checkbox-item list__item">
-                                            <input id="popup-radio-insuline-long"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type">
+                                            <input id="popup-radio-insuline-long"  type="radio" class="popup__radio-input visually-hidden" name="popup-radio-insuline-type"
+                                            value="popup-radio-insuline-long">
                                             <label for="popup-radio-insuline-long" class="popup__radio-label popup__radio-label--weight">Длительного действия</label>
                                         </li>
                                     </ul>
@@ -388,12 +388,12 @@
                         <li class="popup__item">
                             <label for="popup-insulin-number" class="popup__label">Количество вводимого инсулина</label>
                             
-                            <input id="popup-insulin-number" class="popup__input" type="number">
+                            <input id="popup-insulin-number" class="popup__input" type="number"  name="popup-insulin-number">
                         </li>
                         <li class="popup__item">
                             <label for="popup-commentary" class="popup__label">Комментарий</label>
                             
-                            <textarea id="popup-commentary" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea id="popup-commentary" class="popup__input popup__commentary" name="popup-commentary" id="" cols="30" rows="10"></textarea>
                         </li>
                     </ul>
                 </form>
@@ -413,19 +413,19 @@
                     </div>            
                     <ul class="popup__list">
                         <li class="popup__item">
-                            <label for="popup-datetime--weight" class="popup__label">Дата</label>
+                            <label for="popup-datetime-date" class="popup__label">Дата</label>
                             <span class="popup__required">Required</span>
-                            <input id="popup-datetime--weight" class="popup__input" type="datetime-local" required>
+                            <input id="popup-datetime-date" class="popup__input popup__input--datetime" name="popup-datetime-date" type="datetime-local" required>
                         </li>
                         <li class="popup__item popup__item-with-description">
-                            <label for="popup-datetime--weight" class="popup__label">Вес</label>
+                            <label for="popup-datetime-weight" class="popup__label">Вес</label>
                             <span class="popup__required">Required</span>
                             <span class="popup__labels-description">кг.</span>
-                            <input id="popup-datetime--weight" class="popup__input" type="number" required>
+                            <input id="popup-datetime-weight" class="popup__input" name="popup-datetime-weight" type="number" required>
                         </li>                         
                         <li class="popup__item">
-                            <label for="popup-commentary--weight" class="popup__label">Комментарий</label>                            
-                            <textarea id="popup-commentary--weight" class="popup__input popup__commentary" name="" id="" cols="30" rows="10"></textarea>
+                            <label for="popup-commentary-weight" class="popup__label">Комментарий</label>                            
+                            <textarea id="popup-datetime-weight" class="popup__input popup__commentary" name="popup-datetime-weight" id="" cols="30" rows="10"></textarea>
                         </li>
                     </ul>
                 </form>
@@ -433,7 +433,6 @@
         </section>
     </div>    
 
-    <script src="js/script.js"></script>
-   
+    <script src="js/script.js"></script>    
 </body>
 </html>
